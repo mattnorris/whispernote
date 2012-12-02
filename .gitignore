@@ -1,0 +1,10 @@
+# Backup and temporary files
+*.bak
+*.tmp
+tmp*
+*~
+~*
+
+# Artifacts
+*.pyc
+.idea/

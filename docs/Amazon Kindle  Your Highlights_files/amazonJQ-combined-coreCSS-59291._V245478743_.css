@@ -1,0 +1,183 @@
+
+
+/* amzPopoverCss Starts */
+
+.ap_popover {
+    position: absolute;
+    outline: none;
+}
+
+.ap_body {
+    height: 100%;
+    position: relative;
+}
+
+.ap_body .ap_content {
+    background-color: #fff;
+    margin: 0px 17px;
+    
+}
+
+.ap_body .ap_left {
+    width: 17px;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-attachment:scroll;
+    background-repeat:repeat-y;
+}
+.ap_popover_sprited .ap_body .ap_left { background-position:0px top; }
+
+.ap_body .ap_right {
+    width: 17px;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-attachment:scroll;
+    background-repeat:repeat-y;
+}
+.ap_popover_sprited .ap_body .ap_right { background-position:-51px top; }
+
+.ap_header,
+.ap_footer {
+    position: relative;
+    width: 100%;
+}
+
+.ap_header *,
+.ap_footer * {
+    height: 26px;
+}
+
+.ap_header .ap_left {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 34px;
+    background-attachment:scroll;
+    background-repeat:no-repeat;
+}
+.ap_popover_sprited .ap_header .ap_left { background-position:left -2px; }
+
+.ap_header .ap_right {
+    width: 34px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-attachment:scroll;
+    background-repeat:no-repeat;
+}
+.ap_popover_sprited .ap_header .ap_right { background-position:right -2px; }
+
+.ap_header .ap_middle {
+    margin: 0px 34px;
+    background-attachment:scroll;
+    background-repeat:repeat-x;
+}
+.ap_popover_sprited .ap_header .ap_middle { background-position:0px -70px; }
+
+.ap_footer .ap_left {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 34px;
+    background-attachment:scroll;
+    background-repeat:no-repeat;
+}
+.ap_popover_sprited .ap_footer .ap_left { background-position:left -40px; }
+
+.ap_footer .ap_right {
+    width: 34px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-attachment:scroll;
+    background-repeat:no-repeat;
+}
+.ap_popover_sprited .ap_footer .ap_right { background-position:right -40px; }
+
+.ap_footer .ap_middle {
+    margin: 0px 34px;
+    background-attachment:scroll;
+    background-repeat:repeat-x;
+}
+.ap_popover_sprited .ap_footer .ap_middle { background-position:0px -108px;}
+
+.ap_popover .ap_titlebar {
+    display: none;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background-color: #EAF3FE;
+    border-bottom: 1px solid #C2DDF2;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 8px 18px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.ap_popover .ap_titlebar .ap_title {
+    padding: 4px 0px;
+    margin-left: 10px;
+    overflow: hidden;
+}
+
+#ap_overlay {
+    background-color: #3F4C58;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 99;
+    display: none;
+}
+
+.ap_popover .ap_close {
+    position: absolute;
+    right: 18px;
+    top: 13px;
+}
+
+.ap_popover .ap_close a {
+    padding: 5px;
+    text-decoration: none;
+    outline: none;
+}
+
+.ap_popover .ap_close .ap_closetext {
+    display: none;
+    margin-right: 5px;
+    line-height:1em;
+}
+
+.ap_popover .ap_closebutton {
+    display:-moz-inline-box;
+    display:inline-block;
+    width:15px;
+    height:15px;
+    background-repeat:no-repeat;
+    background-position:0px -136px;
+    position:relative;
+    overflow:hidden;
+    vertical-align:top;
+}
+.ap_popover .ap_closebutton span {
+    position:absolute;
+    top:-9999px;
+}
+
+.ap_popover .ap_close img {
+    vertical-align:top;
+}
+
+.ap_classic { border-top:1px solid #ccc;border-left:1px solid #ccc;border-bottom:1px solid #2F2F1D; border-right:1px solid #2F2F1D;background-color:#EFEDD4;padding:3px; }
+.ap_classic .ap_titlebar { color:#86875D;font-size:12px;padding:0 0 3px 0;line-height:1em; }
+.ap_classic .ap_close { float:right; }
+.ap_classic .ap_content { clear:both;background-color:white;border:1px solid #ACA976;padding:8px;font-size:11px; }
+
+
+/* amzPopoverCss Ends */
+
