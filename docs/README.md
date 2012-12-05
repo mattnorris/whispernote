@@ -39,16 +39,6 @@ Strip out HTML tags and formatting before creating the note.
 
     python superclip.py webpage.html xpath1 -p xpath2 -s
 
-### -n 
-The Evernote notebook in which to save the notes. Only one can be provided. 
-
-    python superclip.py webpage.html xpath1 -n MyEvernoteNotebook
-
-### -t 
-Tags to give the notes. Multiple tags can be provided. 
-
-    python superclip.py webpage.html xpath -t inspirational -t great
-
 # License 
 
 Copyright Matt Norris
