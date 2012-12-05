@@ -17,9 +17,11 @@ INPUT_PATH = os.path.normpath(os.path.join(CURR_PATH, '../input'))
 # Update the system path so we can find the modules we want to test.
 sys.path.append(MODULE_PATH)
 
-# Import the modules we want to test.
+# Import the modules and functions we wish to test.
 import clipper
+
 from bs4 import BeautifulSoup
+from urlparse import urlparse
 
 __author__="Matthew Norris"
 
@@ -55,4 +57,21 @@ class TestBeautifulSoup (unittest.TestCase):
     	h_link = h.nextSibling
     	self.assertEqual("<class 'bs4.element.Tag'>", str(h_link.__class__))
     	self.assertEqual("Tag", h_link.__class__.__name__)
-    	
+
+    def test_urlparse(self): 
+    	link1 = "kindle://book?action=open&asin=B004TP29C4&location=4063"
+    	parts = urlparse(link1)
+    	self.assertEqual('?action=open&asin=B004TP29C4&location=4063', 
+    		parts.path)
+    	# Create a highlight ID from the URL path. 
+    	hid = ''.join([param.split('=')[1] for param in parts.path.split('&')])
+    	self.assertEqual('openB004TP29C44063', hid)
+
+    def test_create_enid(self): 
+    	enid = clipper.create_enid(
+    		"kindle://book?action=open&asin=B0047O2PXK&location=38")
+    	self.assertEqual("openB0047O2PXK38", enid)
+
+    	enid = clipper.create_enid(
+    		"kindle://book?action=open&asin=B004TP29C4&location=4063")
+    	self.assertEqual('openB004TP29C44063', enid)
