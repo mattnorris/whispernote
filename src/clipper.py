@@ -3,13 +3,13 @@
 # Script
 import sys
 from optparse import OptionParser
+import datetime
 
 # HTML Parsing
 import urlparse
 from bs4 import BeautifulSoup
 
 # Email 
-
 import smtplib
 import mimetypes
 from email.mime.multipart import MIMEMultipart
@@ -110,16 +110,17 @@ def get_all_highlights(filepath):
     # Get all of the span elements whose class is "highlight". 
     highlights = soup.find_all('span', 'highlight')
     hdicts = []
-    for hl in highlights: 
+    for highlight in highlights: 
         # Save the Kindle URI link. 
-        klink = hl.nextSibling['href']
+        klink = highlight.nextSibling['href']
         # Remove all the unnecessary attributes (style, etc.) from the link. 
-        hl.nextSibling.attrs = {}
-        hl.nextSibling['href'] = klink
+        highlight.nextSibling.attrs = {}
+        highlight.nextSibling['href'] = klink
+        highlight.nextSibling['title'] = "Open this highlight on Kindle"
         # Append the results to the array of highlights. 
         hdicts.append(dict(
-            text=hl.string, 
-            link=hl.nextSibling.encode('ascii'), 
+            text=highlight.string, 
+            link=highlight.nextSibling.encode('ascii'), 
             id=create_enid(klink)))
 
     return hdicts
@@ -155,24 +156,33 @@ def main():
     <p>%s</p>
     <p>%s</p>
     <hr/>
-    <p>Highlight ID: %s</p>
+    <p>Use these unique IDs to search for duplicate notes in Evernote.</p>
+    <ul>
+    <li><em>Highlight ID:</em> %s</li>
+    <li><em>Batch ID:</em> %s</li>
+    </ul>
     """
-
+    now = datetime.datetime.now()
     highlights = get_all_highlights(args[0])
     print 'Found %d highlights. Processing...' % len(highlights)
     for count, highlight in enumerate(highlights): 
         hnum = count + 1
         if options.limit is None or count < options.limit: 
-            print '\nProcessing highlight %d...' % hnum
-            if options.debug: 
-                print highlight
-            else: 
-                # TODO: Note title = truncated text
-                body = '<p>%s</p><p>%s</p><hr/><p>Unique ID: %s</p>' % \
-                    (highlight['text'], highlight['link'], highlight['id'])
+            title = 'Highlight %d clipped on %s' % \
+                    (hnum, now.strftime("%B %d, %Y at %I:%M %p"))
+            body = BODY % \
+                    (highlight['text'], highlight['link'], highlight['id'], 
+                        now.strftime("batch%Y%m%d%H%M%S"))
 
-                mailer.send_mail('Highlight %d' % hnum, body)
+            print '\nProcessing: %s...' % title
+
+            if options.debug: 
+                print BeautifulSoup(body).prettify()
+            else: 
+                mailer.send_mail(title, body)
     print '\nDone.'
+
+    print now
 
 if __name__ == '__main__': 
     main()
