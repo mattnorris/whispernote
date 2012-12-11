@@ -34,8 +34,10 @@ class Mailer:
         msg['From'] = self.gmailUser
         msg['To'] = self.recipient
         msg['Subject'] = subject
+        # For plain text. 
         # msg.attach(MIMEText(text))
-        msg.attach(MIMEText(text, 'html'))
+        # For HTML emails with UTF characters. 
+        msg.attach(MIMEText(text.encode('utf-8'), 'html'))
 
         for attachmentFilePath in attachmentFilePaths:
             msg.attach(self._get_attachment(attachmentFilePath))
@@ -141,7 +143,20 @@ def main():
         parser.error("incorrect number of arguments")
 
     # Create the Mailer to send the emails. 
-    mailer = Mailer(args[1], args[2], args[3])
+    try: 
+        mailer = Mailer(args[1], args[2], args[3])
+    except IndexError: 
+        parser.error("incorrect number of arguments")
+
+    # TODO: Use this instead. 
+    # TODO: Add a better footer. Add date to title. 
+    # TODO: Add title attr to link: "Opens your Kindle!"
+    BODY = """
+    <p>%s</p>
+    <p>%s</p>
+    <hr/>
+    <p>Highlight ID: %s</p>
+    """
 
     highlights = get_all_highlights(args[0])
     print 'Found %d highlights. Processing...' % len(highlights)
