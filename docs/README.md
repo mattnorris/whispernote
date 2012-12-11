@@ -70,13 +70,19 @@ Open a terminal and run kindleclip...
 
 # Options
 
-## --debug
+## -d, --debug
 
 Prints the output rather than sending it to Evernote. 
 
     python kindleclip.py highlights.html email@gmail.com gmailpassword enuser.dyz4@m.evernote.com --debug
 
     python kindleclip.py highlights.html --debug
+
+## -l, --limit
+
+Limits the number of highlights sent to Evernote. 
+    
+    python kindleclip.py highlights.html email@gmail.com gmailpassword enuser.dyz4@m.evernote.com --limit
 
 ---
 

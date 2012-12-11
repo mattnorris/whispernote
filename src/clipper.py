@@ -34,7 +34,8 @@ class Mailer:
         msg['From'] = self.gmailUser
         msg['To'] = self.recipient
         msg['Subject'] = subject
-        msg.attach(MIMEText(text))
+        # msg.attach(MIMEText(text))
+        msg.attach(MIMEText(text, 'html'))
 
         for attachmentFilePath in attachmentFilePaths:
             msg.attach(self._get_attachment(attachmentFilePath))
@@ -145,13 +146,17 @@ def main():
     highlights = get_all_highlights(args[0])
     print 'Found %d highlights. Processing...' % len(highlights)
     for count, highlight in enumerate(highlights): 
+        hnum = count + 1
         if options.limit is None or count < options.limit: 
-            print '\nProcessing highlight %d...' % (count + 1)
+            print '\nProcessing highlight %d...' % hnum
             if options.debug: 
                 print highlight
             else: 
-                mailer.send_mail('Highlight %d' % (count + 1), 
-                    highlight['text'])
+                # TODO: Note title = truncated text
+                body = '<p>%s</p><p>%s</p><hr/><p>Unique ID: %s</p>' % \
+                    (highlight['text'], highlight['link'], highlight['id'])
+
+                mailer.send_mail('Highlight %d' % hnum, body)
     print '\nDone.'
 
 if __name__ == '__main__': 
