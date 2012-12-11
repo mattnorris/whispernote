@@ -82,3 +82,16 @@ class TestBeautifulSoup (unittest.TestCase):
         html_doc = os.path.join(INPUT_PATH, 'kindle-highlights.html')
         highlights = clipper.get_all_highlights(html_doc)
         self.assertEqual(153, len(highlights))
+
+        # Get the last highlight to test. 
+        last = highlights[-1]
+        LAST = {'text': u'thirty-six words, but a hundred assumptions.', 
+        'link': '<a href="kindle://book?action=open&amp;asin=B002MUAJ2A&amp;location=1700">Read&#160;more&#160;at&#160;location&#160;1700</a>', 
+        'id': u'openB002MUAJ2A1700'}
+
+        self.assertEqual('thirty-six words, but a hundred assumptions.', 
+            LAST['text'])
+        self.assertEqual('<a href="kindle://book?action=open&amp;asin=B002MUAJ2A&amp;location=1700">Read&#160;more&#160;at&#160;location&#160;1700</a>', 
+            LAST['link'])
+        self.assertEqual('openB002MUAJ2A1700', 
+            LAST['id'])
