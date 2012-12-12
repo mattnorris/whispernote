@@ -19,6 +19,10 @@ from email.mime.audio import MIMEAudio
 from email.mime.image import MIMEImage
 from email.encoders import encode_base64
 
+# Generic link if we can't find the exact highlight position. 
+LINK = '<a href="kindle://book?action=open&amp;asin=%s&amp;location=1" ' \
+    'title="Open this book on Kindle">Open this book on Kindle</a>'
+
 class Mailer: 
 
     def __init__(self, gmailUser, gmailPassword, recipient): 
@@ -100,9 +104,17 @@ def create_enid(huri):
 # span.highlight for all highlights
 # blockquote for highlights from a single book
 
+def get_soup(filepath): 
+    """
+    Creates a new BeautifulSoup instance given a filepath. 
+    """
+    html_doc = open(filepath, 'r')
+    return BeautifulSoup(html_doc)
+
 def get_all_highlights(filepath): 
     """
-    Returns an array of highlight dictionaries: content, link, and generated IDs 
+    Returns an array of highlight dictionaries - content, link, 
+    and generated IDs - for all books. 
     """
     html_doc = open(filepath, 'r')
     soup = BeautifulSoup(html_doc)
@@ -119,9 +131,31 @@ def get_all_highlights(filepath):
         highlight.nextSibling['title'] = "Open this highlight on Kindle"
         # Append the results to the array of highlights. 
         hdicts.append(dict(
+            book_title=None, 
             text=highlight.string, 
             link=highlight.nextSibling.encode('ascii'), 
-            id=create_enid(klink)))
+            id=create_enid(klink)
+            ))
+
+    return hdicts
+
+def get_highlights(filepath): 
+    """
+    Returns an array of highlight dictionaries - content, link, 
+    and generated IDs - for a single book. 
+    """
+    soup = get_soup(filepath)
+    book_title = soup.title.string.replace("Amazon Kindle: ", "").strip()
+    book_isbn = soup.select('input[name="asin"]')[0]['value']
+    highlights = soup.find_all('blockquote')
+    hdicts = []
+    for count, highlight in enumerate(highlights): 
+        hdicts.append(dict(
+            book_title=book_title, 
+            text=highlight.string, 
+            link=LINK % book_isbn, 
+            id='open' + book_isbn + '{0:04d}'.format(count + 1)
+            ))
 
     return hdicts
 
@@ -155,6 +189,7 @@ def main():
     BODY = """
     <p>%s</p>
     <p>%s</p>
+    <p><em>%s</em></p>
     <hr/>
     <p>Use these unique IDs to search for duplicate notes in Evernote.</p>
     <ul>
@@ -164,14 +199,17 @@ def main():
     """
     now = datetime.datetime.now()
     highlights = get_all_highlights(args[0])
-    print 'Found %d highlights. Processing...' % len(highlights)
+    print 'Found %d highlights.' % len(highlights)
     for count, highlight in enumerate(highlights): 
         hnum = count + 1
         if options.limit is None or count < options.limit: 
             title = 'Highlight %d clipped on %s' % \
                     (hnum, now.strftime("%B %d, %Y at %I:%M %p"))
             body = BODY % \
-                    (highlight['text'], highlight['link'], highlight['id'], 
+                    (highlight['text'], 
+                        highlight['link'], 
+                        highlight['book_title'], 
+                        highlight['id'], 
                         now.strftime("batch%Y%m%d%H%M%S"))
 
             print '\nProcessing: %s...' % title
@@ -181,8 +219,6 @@ def main():
             else: 
                 mailer.send_mail(title, body)
     print '\nDone.'
-
-    print now
 
 if __name__ == '__main__': 
     main()

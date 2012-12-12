@@ -85,13 +85,24 @@ class TestBeautifulSoup (unittest.TestCase):
 
         # Get the last highlight to test. 
         last = highlights[-1]
-        LAST = {'text': u'thirty-six words, but a hundred assumptions.', 
-        'link': '<a href="kindle://book?action=open&amp;asin=B002MUAJ2A&amp;location=1700">Read&#160;more&#160;at&#160;location&#160;1700</a>', 
-        'id': u'openB002MUAJ2A1700'}
 
+        self.assertFalse(last['book_title'])
         self.assertEqual('thirty-six words, but a hundred assumptions.', 
-            LAST['text'])
-        self.assertEqual('<a href="kindle://book?action=open&amp;asin=B002MUAJ2A&amp;location=1700">Read&#160;more&#160;at&#160;location&#160;1700</a>', 
-            LAST['link'])
+            last['text'])
+        self.assertEqual('<a href="kindle://book?action=open&amp;asin=B002MUAJ2A&amp;location=1700" ' \
+            'title="Open this highlight on Kindle">Read&#160;more&#160;at&#160;location&#160;1700</a>', 
+            last['link'])
         self.assertEqual('openB002MUAJ2A1700', 
-            LAST['id'])
+            last['id'])
+
+    def test_get_book_highlights(self): 
+        html_doc = os.path.join(INPUT_PATH, 'kindle-single-book-sample.html')
+        highlights = clipper.get_highlights(html_doc)
+        
+        self.assertEqual(27, len(highlights))
+        self.assertEqual('Fairy and Folk Tales of the Irish Peasantry', 
+            highlights[0]['book_title'])
+        self.assertEqual('openB004TP29C40001', highlights[0]['id'])
+        self.assertEqual('<a href="kindle://book?action=open&amp;asin=B004TP29C4&amp;location=1" ' \
+            'title="Open this book on Kindle">Open this book on Kindle</a>', 
+            highlights[0]['link'])

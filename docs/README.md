@@ -21,7 +21,21 @@
 
 	python kindleclip.py highlights.html email@gmail.com gmailpassword enuser.dyz4@m.evernote.com
 
-Output: a new Evernote note for each highlight in *highlights.html*
+## Output
+
+A new Evernote note is created for each highlight in *highlights.html*. Here is an example: 
+
+> Many treasure-crocks, buried of old in war-time, has he now for his own.
+
+> [Read more at location 1368](kindle://book?action=open&asin=B004TP29C4&location=1368 "Open this highlight on Kindle")
+
+> ---
+> Use these unique IDs to search for duplicate notes in Evernote.
+
+> - *Highlight ID:* openB004TP29C41368
+> - *Batch ID:* batch20121211171828
+
+Note that a *Highlight ID* and *Batch ID* are generated and added to the note. **Search Evernote** with the *Highlight ID* to find duplicates (highlights you've sent to Evernote more than once) and the *Batch ID* to find all the highlights you've sent during one execution of **kindleclip**. 
 
 ---
 
@@ -82,7 +96,7 @@ Prints the output rather than sending it to Evernote.
 
 Limits the number of highlights sent to Evernote. 
     
-    python kindleclip.py highlights.html email@gmail.com gmailpassword enuser.dyz4@m.evernote.com --limit
+    python kindleclip.py highlights.html email@gmail.com gmailpassword enuser.dyz4@m.evernote.com --limit 3
 
 ---
 
