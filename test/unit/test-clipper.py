@@ -79,8 +79,12 @@ class TestBeautifulSoup (unittest.TestCase):
         self.assertEqual('openB004TP29C44063', enid)
 
     def test_get_all_highlights(self): 
-        html_doc = os.path.join(INPUT_PATH, 'kindle-highlights.html')
-        highlights = clipper.get_all_highlights(html_doc)
+        filepath = os.path.join(INPUT_PATH, 'kindle-highlights.html')
+        html_doc = open(filepath, 'r')
+        soup = BeautifulSoup(html_doc)
+        
+        highlights = clipper.get_all_highlights(soup)
+        
         self.assertEqual(153, len(highlights))
 
         # Get the last highlight to test. 
@@ -96,8 +100,11 @@ class TestBeautifulSoup (unittest.TestCase):
             last['id'])
 
     def test_get_book_highlights(self): 
-        html_doc = os.path.join(INPUT_PATH, 'kindle-single-book-sample.html')
-        highlights = clipper.get_highlights(html_doc)
+        filepath = os.path.join(INPUT_PATH, 'kindle-single-book-sample.html')
+        html_doc = open(filepath, 'r')
+        soup = BeautifulSoup(html_doc)
+
+        highlights = clipper.get_highlights(soup)
         
         self.assertEqual(27, len(highlights))
         self.assertEqual('Fairy and Folk Tales of the Irish Peasantry', 

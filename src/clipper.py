@@ -101,24 +101,11 @@ def create_enid(huri):
     return ''.join([param.split('=')[1] \
         for param in urlparse.urlparse(huri).path.split('&')])
 
-# span.highlight for all highlights
-# blockquote for highlights from a single book
-
-def get_soup(filepath): 
-    """
-    Creates a new BeautifulSoup instance given a filepath. 
-    """
-    html_doc = open(filepath, 'r')
-    return BeautifulSoup(html_doc)
-
-def get_all_highlights(filepath): 
+def get_all_highlights(soup): 
     """
     Returns an array of highlight dictionaries - content, link, 
     and generated IDs - for all books. 
     """
-    html_doc = open(filepath, 'r')
-    soup = BeautifulSoup(html_doc)
-
     # Get all of the span elements whose class is "highlight". 
     highlights = soup.find_all('span', 'highlight')
     hdicts = []
@@ -129,9 +116,13 @@ def get_all_highlights(filepath):
         highlight.nextSibling.attrs = {}
         highlight.nextSibling['href'] = klink
         highlight.nextSibling['title'] = "Open this highlight on Kindle"
+        
+        # TODO: Get ASIN (ISBN) for book_title.
+        book_title = ''
+
         # Append the results to the array of highlights. 
         hdicts.append(dict(
-            book_title=None, 
+            book_title=book_title, 
             text=highlight.string, 
             link=highlight.nextSibling.encode('ascii'), 
             id=create_enid(klink)
@@ -139,12 +130,11 @@ def get_all_highlights(filepath):
 
     return hdicts
 
-def get_highlights(filepath): 
+def get_highlights(soup): 
     """
     Returns an array of highlight dictionaries - content, link, 
     and generated IDs - for a single book. 
     """
-    soup = get_soup(filepath)
     book_title = soup.title.string.replace("Amazon Kindle: ", "").strip()
     book_isbn = soup.select('input[name="asin"]')[0]['value']
     highlights = soup.find_all('blockquote')
@@ -188,8 +178,8 @@ def main():
     # TODO: Add title attr to link: "Opens your Kindle!"
     BODY = """
     <p>%s</p>
-    <p>%s</p>
     <p><em>%s</em></p>
+    <p>%s</p>
     <hr/>
     <p>Use these unique IDs to search for duplicate notes in Evernote.</p>
     <ul>
@@ -198,17 +188,27 @@ def main():
     </ul>
     """
     now = datetime.datetime.now()
-    highlights = get_all_highlights(args[0])
+
+    html_doc = open(args[0], 'r')
+    soup = BeautifulSoup(html_doc)
+
+    highlights = []
+    if soup.title.string == 'Amazon Kindle: Your Highlights': 
+        highlights = get_all_highlights(soup)
+    else: 
+        highlights = get_highlights(soup)
+
     print 'Found %d highlights.' % len(highlights)
     for count, highlight in enumerate(highlights): 
         hnum = count + 1
         if options.limit is None or count < options.limit: 
             title = 'Highlight %d clipped on %s' % \
                     (hnum, now.strftime("%B %d, %Y at %I:%M %p"))
+            
             body = BODY % \
                     (highlight['text'], 
-                        highlight['link'], 
                         highlight['book_title'], 
+                        highlight['link'], 
                         highlight['id'], 
                         now.strftime("batch%Y%m%d%H%M%S"))
 
