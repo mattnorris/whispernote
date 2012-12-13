@@ -217,7 +217,7 @@ def main():
             if options.debug: 
                 print BeautifulSoup(body).prettify()
             else: 
-                mailer.send_mail(title, body)
+                mailer.send_mail(title + ' #kindle #highlight', body)
     print '\nDone.'
 
 if __name__ == '__main__': 
