@@ -156,6 +156,8 @@ def main():
         help="Print debug information")
     parser.add_option("-l", "--limit", action="store", type="int", 
         help="Limit the number of highlights processed")
+    parser.add_option("-s", "--start", action="store", type="int", 
+        help="Starts processing highlights at the given position.")
     options, args = parser.parse_args()
 
     # print 'opts', options
@@ -199,11 +201,15 @@ def main():
         highlights = get_highlights(soup)
 
     print 'Found %d highlights.' % len(highlights)
-    for count, highlight in enumerate(highlights): 
-        hnum = count + 1
+
+    # Start at the starting point, if one is given. 
+    start = options.start - 1 or 0
+    # Process. 
+    for highlight in highlights[start:]: 
+        
         if options.limit is None or count < options.limit: 
             title = 'Highlight %d clipped on %s' % \
-                    (hnum, now.strftime("%B %d, %Y at %I:%M %p"))
+                    (start + 1, now.strftime("%B %d, %Y at %I:%M %p"))
             
             body = BODY % \
                     (highlight['text'], 
@@ -218,6 +224,9 @@ def main():
                 print BeautifulSoup(body).prettify()
             else: 
                 mailer.send_mail(title + ' #kindle #highlight', body)
+
+        start += 1 
+
     print '\nDone.'
 
 if __name__ == '__main__': 

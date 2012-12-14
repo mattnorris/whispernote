@@ -67,6 +67,19 @@ class TestBeautifulSoup (unittest.TestCase):
         hid = ''.join([param.split('=')[1] for param in parts.path.split('&')])
         self.assertEqual('openB004TP29C44063', hid)
 
+    def test_array_slicing(self): 
+        array = ['apples', 'bananas', 'pears', 'oranges', 'peaches']
+
+        self.assertEqual(['apples', 'bananas', 
+            'pears', 'oranges', 'peaches'], array[0:])
+        # Is original array affected? 
+        self.assertEqual(['apples', 'bananas', 
+            'pears', 'oranges', 'peaches'], array)
+        # Nope. 
+
+        self.assertEqual(['pears', 'oranges', 'peaches'], array[2:])
+        self.assertEqual(['peaches'], array[4:])
+
     # Test the script's functions. 
 
     def test_create_enid(self): 

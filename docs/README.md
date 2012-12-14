@@ -98,6 +98,14 @@ Limits the number of highlights sent to Evernote.
     
     python kindleclip.py highlights.html email@gmail.com gmailpassword enuser.dyz4@m.evernote.com --limit 3
 
+## -s, --start
+
+Starts processing highlights at the given position. 
+
+    python kindleclip.py highlights.html email@gmail.com gmailpassword enuser.dyz4@m.evernote.com --start 50
+
+Start with the 50th highlight instead of the first. 
+
 ---
 
 # License 
