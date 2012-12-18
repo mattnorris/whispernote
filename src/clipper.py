@@ -203,9 +203,9 @@ def main():
     print 'Found %d highlights.' % len(highlights)
 
     # Start at the starting point, if one is given. 
-    start = options.start - 1 or 0
+    start = options.start - 1 if options.start else 0
     # Process. 
-    for highlight in highlights[start:]: 
+    for count, highlight in enumerate(highlights[start:]): 
         
         if options.limit is None or count < options.limit: 
             title = 'Highlight %d clipped on %s' % \

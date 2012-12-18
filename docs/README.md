@@ -122,6 +122,7 @@ Matt Norris
 - Take a URL also
 - Flexible; not just Kindle highlights
 - Spit it out as JSON, etc. not just Evernote
+- UTF-8 encoding issue for apostrophes: http://stackoverflow.com/questions/2292004
 
 ## References
 http://stackoverflow.com/q/174968/154065
