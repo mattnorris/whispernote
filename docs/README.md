@@ -124,5 +124,9 @@ Matt Norris
 - Spit it out as JSON, etc. not just Evernote
 - UTF-8 encoding issue for apostrophes: http://stackoverflow.com/questions/2292004
 
+## FAQ (Move to URL)
+Why not use My Clippings.txt? 
+I like the "Read from Kindle" option. No easy way to do it with My Clippings. Have to use an ASIN lookup with a web service... too much time. Can be done. 
+
 ## References
 http://stackoverflow.com/q/174968/154065
