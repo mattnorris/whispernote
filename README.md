@@ -1,29 +1,27 @@
-# kindleclip
-## for Evernote
+# whispernote
+## Send Kindle Highlights to Evernote
 
 ---
 
 # Problem
 - You love reading your **Kindle**, and you make lots of highlights to review later. 
 - You also use **Evernote** to remember... well, just about everything. 
-- You can save [your Kindle highlights](https://kindle.amazon.com/your_highlights "https://kindle.amazon.com/your_highlights") as one long note with **Evernote Web Clipper**, but Evernote [can't split a note into multiple notes](http://discussion.evernote.com/topic/21855-splitting-a-note-into-multiple-notes/, "Evernote Discussion Forum"), and you really want to save each highlight *separately*. 
-- You can save [your Kindle highlights](https://kindle.amazon.com/your_highlights "https://kindle.amazon.com/your_highlights") into separate notes with **Evernote Web Clipper**, but that's too tedious. 
+- You can save [your Kindle highlights](https://kindle.amazon.com/your_highlights "https://kindle.amazon.com/your_highlights") as *one long note* with **Evernote Web Clipper**, but [Evernote can't split a note into multiple notes](http://discussion.evernote.com/topic/21855-splitting-a-note-into-multiple-notes/, "Evernote Discussion Forum"), and you really want to save each highlight *separately*. 
+- You can save each highlight into a separate note with **Evernote Web Clipper**, but that's too tedious. 
 
 # Solution
 
-**kindleclip** uses your Gmail account to create separate Evernote notes for all of your Kindle highlights. 
+**whispernote** uses your Gmail account to create separate Evernote notes for all of your Kindle highlights. 
 
 ---
 
 # Example
 
-## Command Line
-
-	python kindleclip.py highlights.html email@gmail.com gmailpassword enuser.dyz4@m.evernote.com
+	python whispernote.py highlights.html email@gmail.com gmailpassword enuser.abc3@m.evernote.com
 
 ## Output
 
-A new Evernote note is created for each highlight in *highlights.html*. Here is an example: 
+A new Evernote note is created for each highlight in *highlights.html*: 
 
 > Many treasure-crocks, buried of old in war-time, has he now for his own.
 
@@ -35,21 +33,32 @@ A new Evernote note is created for each highlight in *highlights.html*. Here is 
 > - *Highlight ID:* openB004TP29C41368
 > - *Batch ID:* batch20121211171828
 
-Note that a *Highlight ID* and *Batch ID* are generated and added to the note. **Search Evernote** with the *Highlight ID* to find duplicates (highlights you've sent to Evernote more than once) and the *Batch ID* to find all the highlights you've sent during one execution of **kindleclip**. 
+### Output Details
+
+- Part 1: The highlight itself; a "Read more..." link is included so you can open Kindle directly and view the context of your highlight.
+- Part 2: A *Highlight ID* and *Batch ID* are generated for each note. 
+	- Search Evernote with the unique *Highlight ID* to find duplicate notes. 
+	- Search via *Batch ID* to find all the notes created in a particular session. 
 
 ---
 
 # Instructions
 
-It's recommended that you save a copy of the highlights page you want to process; your Kindle account pages won't load all of your highlights immediately. Instead, you must manually scroll to trigger the loading of more highlights (or use a plugin to scroll while you get yourself a drink). 
+## What You'll Need
+
+- Amazon Kindle account
+- Evernote account
+- Gmail account
 
 ## Get the Highlights File
 
-### All Your Highlights
+It's recommended that you save a copy of the highlights page you want to process; your Kindle account pages won't load all of your highlights immediately. Instead, you must manually scroll to load more highlights (or use a [plugin](https://chrome.google.com/webstore/detail/auto-scroll/eochlhpceohhhfogfeladaifggikcjhk) to scroll while you get yourself a drink). 
+
+### All Highlights
 
 1. Visit [https://kindle.amazon.com](https://kindle.amazon.com). 
 2. Click "Your Highlights". 
-2. Scroll ALL the way down the page by holding *PgDn* until the page stops loading more highlights, or by using a plugin like [Chrome Auto Scroll](https://chrome.google.com/webstore/detail/auto-scroll/eochlhpceohhhfogfeladaifggikcjhk). 
+2. Scroll ALL the way down the page by holding *PgDn* until the page stops loading more highlights, or use a plugin like [Chrome Auto Scroll](https://chrome.google.com/webstore/detail/auto-scroll/eochlhpceohhhfogfeladaifggikcjhk). 
 4. Save the page. 
 
 ### Highlights from a Single Book
@@ -67,18 +76,20 @@ Highlights for individual books are displayed differently, so the approach is sl
 9. Paste the copied text. 
 10. Save the file. 
 
+For the rationale of using these methods instead of Kindle's `My Clippings.txt`, see TODO. 
+
 ## Send Each Highlight to Evernote
 
-Open a terminal and run kindleclip... 
+Open a terminal and run whispernote... 
 
-    python kindleclip.py highlights.html email@gmail.com gmailpassword enuser.dyz4@m.evernote.com
+    python whispernote.py highlights.html email@gmail.com gmailpassword enuser.abc3@m.evernote.com
 
 ...where...
 
 1. `highlights.html` is the file saved in the previous steps. 
 2. `email@gmail.com` is your Gmail account
 3. `gmailpassword` is your account password 
-4. `enuser.dyz4@m.evernote.com` is the email address assigned to you by Evernote
+4. `enuser.abc3@m.evernote.com` is the email address assigned to you by Evernote
 
 ---
 
@@ -88,45 +99,39 @@ Open a terminal and run kindleclip...
 
 Prints the output rather than sending it to Evernote. 
 
-    python kindleclip.py highlights.html email@gmail.com gmailpassword enuser.dyz4@m.evernote.com --debug
+    python whispernote.py highlights.html email@gmail.com gmailpassword enuser.abc3@m.evernote.com --debug
 
-    python kindleclip.py highlights.html --debug
+    python whispernote.py highlights.html --debug
 
 ## -l, --limit
 
 Limits the number of highlights sent to Evernote. 
     
-    python kindleclip.py highlights.html email@gmail.com gmailpassword enuser.dyz4@m.evernote.com --limit 3
+    python whispernote.py highlights.html email@gmail.com gmailpassword enuser.abc3@m.evernote.com --limit 3
+
+Only 3 notes will be created. 
 
 ## -s, --start
 
 Starts processing highlights at the given position. 
 
-    python kindleclip.py highlights.html email@gmail.com gmailpassword enuser.dyz4@m.evernote.com --start 50
+    python whispernote.py highlights.html email@gmail.com gmailpassword enuser.abc3@m.evernote.com --start 50
 
-Start with the 50th highlight instead of the first. 
+Starts with the 50th highlight instead of the first. 
 
 ---
 
 # License 
 
-Copyright Matt Norris
-
-# Contributors
-
-Matt Norris
+Copyright (c) Matt Norris and licensed under the MIT license. See the LICENSE file for full details.
 
 # More 
-[Wishlist, rationale, etc.](http://wraithmonster.com "More information")
-
-- Take a URL also
-- Flexible; not just Kindle highlights
-- Spit it out as JSON, etc. not just Evernote
-- UTF-8 encoding issue for apostrophes: http://stackoverflow.com/questions/2292004
-
-## FAQ (Move to URL)
-Why not use My Clippings.txt? 
-I like the "Read from Kindle" option. No easy way to do it with My Clippings. Have to use an ASIN lookup with a web service... too much time. Can be done. 
 
 ## References
 http://stackoverflow.com/q/174968/154065
+
+## Why not use My Clippings.txt? 
+
+I could. But I really liked the ability to open the highlight on my device's native Kindle app, right from its link in Evernote with the "Read more at location..." link. `My Clippings.txt` is missing a crucial piece of info to do that, the *Amazon Standard Identification Number* ([ASIN](http://en.wikipedia.org/wiki/Amazon_Standard_Identification_Number)). 
+
+I could use a web service to try to find the ASIN and build the link, but that's too much effort when simple scrolling will do. However, you're welcome to do so. Fork me!
