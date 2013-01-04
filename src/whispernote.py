@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 
+"""
+Creates Evernote notes for all of your Kindle highlights. 
+"""
+
 # Script
 import sys
 from optparse import OptionParser
@@ -18,6 +22,8 @@ from email.mime.text import MIMEText
 from email.mime.audio import MIMEAudio
 from email.mime.image import MIMEImage
 from email.encoders import encode_base64
+
+__homepage__ = "http://mattnorris.me"
 
 # Generic link if we can't find the exact highlight position. 
 LINK = '<a href="kindle://book?action=open&amp;asin=%s&amp;location=1" ' \
@@ -160,9 +166,6 @@ def main():
         help="Starts processing highlights at the given position.")
     options, args = parser.parse_args()
 
-    # print 'opts', options
-    # print 'args', args
-
     if options.debug: 
         if len(args) < 1: 
             parser.error("incorrect number of arguments")
@@ -175,9 +178,6 @@ def main():
     except IndexError: 
         parser.error("incorrect number of arguments")
 
-    # TODO: Use this instead. 
-    # TODO: Add a better footer. Add date to title. 
-    # TODO: Add title attr to link: "Opens your Kindle!"
     BODY = """
     <p>%s</p>
     <p><em>%s</em></p>

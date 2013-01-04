@@ -1,6 +1,7 @@
 #!/usr/bin/env python
+
 """
-Tests whispernote. 
+Tests whispernote and its supporting functions (e.g., URL parsing). 
 """
 
 import unittest
@@ -23,7 +24,7 @@ import whispernote
 from bs4 import BeautifulSoup
 from urlparse import urlparse
 
-__author__="Matthew Norris"
+__homepage__ = "http://mattnorris.me"
 
 class TestBeautifulSoup (unittest.TestCase):
     def setUp(self):
