@@ -1,6 +1,6 @@
 #!/bin/bash
 # debug
 #
-# Runs a debug command for the kindle project. 
+# Runs a debug command for this project. 
 #
-python ../src/clipper.py -d ../test/input/kindle-highlights.html 2 3 4
+python ../src/whispernote.py -d ../test/input/kindle-highlights.html 2 3 4

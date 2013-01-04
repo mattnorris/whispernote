@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-Tests the web page Clipper. 
+Tests whispernote. 
 """
 
 import unittest
@@ -18,7 +18,7 @@ INPUT_PATH = os.path.normpath(os.path.join(CURR_PATH, '../input'))
 sys.path.append(MODULE_PATH)
 
 # Import the modules and functions we wish to test.
-import clipper
+import whispernote
 
 from bs4 import BeautifulSoup
 from urlparse import urlparse
@@ -83,11 +83,11 @@ class TestBeautifulSoup (unittest.TestCase):
     # Test the script's functions. 
 
     def test_create_enid(self): 
-        enid = clipper.create_enid(
+        enid = whispernote.create_enid(
             "kindle://book?action=open&asin=B0047O2PXK&location=38")
         self.assertEqual("openB0047O2PXK38", enid)
 
-        enid = clipper.create_enid(
+        enid = whispernote.create_enid(
             "kindle://book?action=open&asin=B004TP29C4&location=4063")
         self.assertEqual('openB004TP29C44063', enid)
 
@@ -96,7 +96,7 @@ class TestBeautifulSoup (unittest.TestCase):
         html_doc = open(filepath, 'r')
         soup = BeautifulSoup(html_doc)
         
-        highlights = clipper.get_all_highlights(soup)
+        highlights = whispernote.get_all_highlights(soup)
         
         self.assertEqual(153, len(highlights))
 
@@ -117,7 +117,7 @@ class TestBeautifulSoup (unittest.TestCase):
         html_doc = open(filepath, 'r')
         soup = BeautifulSoup(html_doc)
 
-        highlights = clipper.get_highlights(soup)
+        highlights = whispernote.get_highlights(soup)
         
         self.assertEqual(27, len(highlights))
         self.assertEqual('Fairy and Folk Tales of the Irish Peasantry', 
