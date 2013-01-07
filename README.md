@@ -1,7 +1,7 @@
-# whispernote
-## Send Kindle Highlights to Evernote
+# Whispernote
+## Create Evernote notes from Kindle highlights
 
----
+***
 
 # Problem
 - You love reading your **Kindle**, and you make lots of highlights to review later. 
@@ -13,7 +13,7 @@
 
 **whispernote** uses your Gmail account to create separate Evernote notes for all of your Kindle highlights. 
 
----
+***
 
 # Example
 
@@ -40,7 +40,7 @@ A new Evernote note is created for each highlight in *highlights.html*:
 	- Search Evernote with the unique *Highlight ID* to find duplicate notes. 
 	- Search via *Batch ID* to find all the notes created in a particular session. 
 
----
+EXPECTED
 
 # Instructions
 
@@ -91,7 +91,7 @@ Open a terminal and run whispernote...
 3. `gmailpassword` is your account password 
 4. `enuser.abc3@m.evernote.com` is the email address assigned to you by Evernote
 
----
+EXPECTED
 
 # Options
 
@@ -119,7 +119,7 @@ Starts processing highlights at the given position.
 
 Starts with the 50th highlight instead of the first. 
 
----
+EXPECTED
 
 # License 
 
@@ -127,11 +127,4 @@ Copyright (c) Matt Norris and licensed under the MIT license. See the LICENSE fi
 
 # More 
 
-## References
-http://stackoverflow.com/q/174968/154065
-
-## Why not use My Clippings.txt? 
-
-I could. But I really liked the ability to open the highlight on my device's native Kindle app, right from its link in Evernote with the "Read more at location..." link. `My Clippings.txt` is missing a crucial piece of info to do that, the *Amazon Standard Identification Number* ([ASIN](http://en.wikipedia.org/wiki/Amazon_Standard_Identification_Number)). 
-
-I could use a web service to try to find the ASIN and build the link, but that's too much effort when simple scrolling will do. However, you're welcome to do so. Fork me!
+[Project Page](http://mattnorris.me/whispernote)
