@@ -40,7 +40,7 @@ A new Evernote note is created for each highlight in *highlights.html*:
 	- Search Evernote with the unique *Highlight ID* to find duplicate notes. 
 	- Search via *Batch ID* to find all the notes created in a particular session. 
 
-EXPECTED
+***
 
 # Instructions
 
@@ -119,7 +119,7 @@ Starts processing highlights at the given position.
 
 Starts with the 50th highlight instead of the first. 
 
-EXPECTED
+***
 
 # License 
 
