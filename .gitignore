@@ -9,3 +9,4 @@ tmp*
 *.pyc
 .idea/
 output/
+.picasa*
