@@ -10,7 +10,7 @@
             <img src="http://lh4.googleusercontent.com/-SKcMaolNGjs/UOpEXtUoPwI/AAAAAAAAAoI/b_xkmRF66k8/s771/whispernote-github-banner.jpg"/>
         </div>
         <div>
-            {% capture README.md %}
+            {% capture README %}
                 {% include README.md %}
             {% endcapture %}
             {{ README | markdownify }}
