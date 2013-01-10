@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+    <body>
+        <h1>MattNorris.me</h1>
+        <div>
+            <img src="http://lh4.googleusercontent.com/-SKcMaolNGjs/UOpEXtUoPwI/AAAAAAAAAoI/b_xkmRF66k8/s771/whispernote-github-banner.jpg"/>
+        </div>
+        <div>
+            {% capture README.md %}
+                {% include README.md %}
+            {% endcapture %}
+            {{ README | markdownify }}
+        </div>
+    </body>
+</html>
