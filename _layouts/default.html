@@ -1,18 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>{{ page.title }}</title>
+    <head>
+        <meta charset="utf-8">
+        <title>{{ page.title }}</title>
+    </head>
     <body>
-        <h1>MattNorris.me</h1>
-        <h2>{{ page.anothervar }}</h2>
         <div>
-            <img src="http://lh4.googleusercontent.com/-SKcMaolNGjs/UOpEXtUoPwI/AAAAAAAAAoI/b_xkmRF66k8/s771/whispernote-github-banner.jpg"/>
+            <img src="{{ page.image }}" alt="{{ page.title }}" />
         </div>
-        <div>
-            
-        </div>
-        <!-- Additional content -->
         <div>
             {{ content }}
         </div>
