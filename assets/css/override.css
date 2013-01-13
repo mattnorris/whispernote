@@ -1,8 +1,29 @@
 body { 
-    color: #fff;
-    background-color: #282828;
+    /**
+     * Potential fonts: 
+     * 
+     * Arvo
+     * Linden Hill
+     * Lusitana
+
+     * PT Serif (used by Evernote)
+     */
+    font-family: arvo, serif, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+aside {
+    font-family: josefin-slab, serif;
+}
+
+blockquote {
+    font-family: "Helvetica Neue", Helvetica, Arial, serif;
 }
 
 h1 {
-    color: orange;
+    color: #f89406;
+    font-family: 'Raleway', "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h2,h3,h4,h5 {
+    font-family: 'Raleway', "Helvetica Neue", Helvetica, Arial, sans-serif;
 }

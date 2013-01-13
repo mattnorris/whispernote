@@ -1,0 +1,8 @@
+# Options used by GitHub
+# --pygments --no-lsi --safe
+pygments: true
+lsi: false
+safe: true
+
+# "Watch" the site for changes and apply them automatically. 
+auto: true

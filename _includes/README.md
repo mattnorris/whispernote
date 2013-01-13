@@ -17,12 +17,12 @@ You love reading your **Kindle**, and you make lots of highlights to review late
 A new Evernote note is created for each highlight in *highlights.html*: 
 
 > Many treasure-crocks, buried of old in war-time, has he now for his own.
-
+> 
 > [Read more at location 1368](kindle://book?action=open&asin=B004TP29C4&location=1368 "Open this highlight on Kindle")
-
+> 
 > ---
 > Use these unique IDs to search for duplicate notes in Evernote.
-
+> 
 > - *Highlight ID:* openB004TP29C41368
 > - *Batch ID:* batch20121211171828
 

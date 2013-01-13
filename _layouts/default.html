@@ -3,20 +3,41 @@
     <head>
         <meta charset="utf-8">
         <title>{{ page.title }}</title>
+        <!-- Bootstrap -->
         <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
-        <!-- Overrride certain bootstrap styles. -->
+        <!-- Overrride some styles. -->
         <link href="assets/css/override.css" rel="stylesheet" media="screen"/>
         <!-- Assign styles to elements. --> 
         <link href="assets/css/assign.css" rel="stylesheet" media="screen"/>
     </head>
+    
     <body>
-        <div>
-            <img src="{{ page.image }}" alt="{{ page.title }}" />
-        </div>
-        <div>
-            {{ content }}
+        <div class="container">
+            <div>
+                <img src="{{ page.image }}" alt="{{ page.title }}" />
+            </div>
+            <div>
+                {{ content }}
+            </div>
         </div>
     </body>
+
+    <!-- Bootstrap -->
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Web fonts -->
+    <script src="http://use.edgefonts.net/arvo.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
+
+    <script>
+        $(function(){
+            // Make all of the headers uppercase. 
+            $.each($('h1'), function(){
+                $(this).text($(this).text().toUpperCase());
+            });
+
+            // TODO: Find the "Why note use..?" and highlight it with class="alert alert-info"
+        });
+    </script>
 </html>
