@@ -1,1 +1,14 @@
+# Backup and temporary files
+*.bak
+*.tmp
+tmp*
+*~
+~*
+
+# jekyll 
 _site/
+
+# Bootstrap 
+bootstrap-responsive.css
+bootstrap.css
+bootstrap.js
