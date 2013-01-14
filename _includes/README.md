@@ -1,12 +1,9 @@
 # Whispernote
 ## Create Evernote notes from Kindle highlights
 
-***
 You love reading your **Kindle**, and you make lots of highlights to review later. You also use **Evernote** to remember... well, just about everything. Too bad there isn't a good way to save *each highlight* as a separate note in Evernote. Or is there?  
 
 **Whispernote** uses Gmail to create separate Evernote notes from all of your Kindle highlights. 
-
-***
 
 # Example
 
@@ -26,12 +23,10 @@ A new Evernote note is created for each highlight in *highlights.html*:
 > - *Highlight ID:* openB004TP29C41368
 > - *Batch ID:* batch20121211171828
 
-## Output Details
+### Output Details
 
 - Part 1: The highlight itself; use the "Read more..." link to **open Kindle directly on your device** and read the context of your highlight.
 - Part 2: A *Highlight ID* and *Batch ID* are generated for each note. Search Evernote with the unique *Highlight ID* to find duplicate notes, or with the *Batch ID* to find all the notes created in a particular session. 
-
-***
 
 # Instructions
 
@@ -61,9 +56,9 @@ Highlights for individual books are displayed differently, so the approach is sl
 9. Paste the copied text. 
 10. Save the file. 
 
-Why not use Kindle's `My Clippings.txt`? [Read the rationale.](http://mattnorris.me/whispernote)
+Why not use Kindle's `My Clippings.txt`? [Read the rationale.](http://mattnorris.me/whispernote#why_not_use_my_clippingstxt)
 
-## Send the Highlights to Evernote
+## Create the Notes
 
 Open a terminal and run whispernote... 
 
@@ -76,8 +71,6 @@ Open a terminal and run whispernote...
 3. `gmailpassword` is your account password 
 4. `user.abc3@m.evernote.com` is your Evernote incoming email address
 
-***
-
 # Options
 
 ## -d, --debug
@@ -85,6 +78,8 @@ Open a terminal and run whispernote...
 Prints the output rather than sending it to Evernote. 
 
     whispernote.py highlights.html email@gmail.com gmailpassword user.abc3@m.evernote.com --debug
+
+or 
 
     whispernote.py highlights.html --debug
 
@@ -94,7 +89,7 @@ Limits the number of highlights sent to Evernote.
     
     whispernote.py highlights.html email@gmail.com gmailpassword user.abc3@m.evernote.com --limit 3
 
-Only 3 notes will be created. 
+Only *3* notes will be created. 
 
 ## -s, --start
 
@@ -102,9 +97,7 @@ Starts processing highlights at the given position.
 
     whispernote.py highlights.html email@gmail.com gmailpassword user.abc3@m.evernote.com --start 50
 
-Starts with the 50th highlight instead of the first. 
-
-***
+Starts with the *50th* highlight instead of the first. 
 
 # License 
 

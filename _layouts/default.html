@@ -15,12 +15,15 @@
     
     <body>
         <div class="container-fluid">
-            <div>
+            <header>
                 <img src="{{ page.image }}" alt="{{ page.title }}" />
-            </div>
+            </header>
             <div>
                 {{ content }}
             </div>
+            <footer class="well">
+                See more at <a href="http://mattnorris.me">mattnorris.me</a>
+            </footer>
         </div>
     </body>
 
@@ -33,13 +36,32 @@
     <link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
 
     <script>
-        $(function(){
-            // Make all of the headers uppercase. 
+        $(function() {
+            /**
+             * Common 
+             */
+
+            // Remove the README's "More" section. 
+            $('#more:first').next().remove(); // link first...
+            $('#more:first').remove(); // ...now header
+
+            // Make all of the headers uppercase and give them anchors. 
             $.each($('h1'), function(){
-                $(this).text($(this).text().toUpperCase());
+                $(this).text($(this).text().toUpperCase()); 
             });
 
-            // TODO: Find the "Why note use..?" and highlight it with class="alert alert-info"
+            /**
+             * Site-specific
+             */
+
+            // Highlight the "Read the rationale" section.
+            $('a[href="http://mattnorris.me/whispernote#why_not_use_my_clippingstxt"]')
+                .parent().addClass("alert alert-info");
+
+            // Get all the option headers and apply a "code" font. 
+            $('#d_debug').addClass('code-option');
+            $('#l_limit').addClass('code-option');
+            $('#s_start').addClass('code-option');
         });
     </script>
 </html>
