@@ -14,10 +14,9 @@
     </head>
     
     <body>
+        <!-- Place image outside so it can expand to the full page width. -->
+        <img class="jumbo" src="{{ page.image }}" alt="{{ page.title }}" />
         <div class="container-fluid">
-            <header>
-                <img src="{{ page.image }}" alt="{{ page.title }}" />
-            </header>
             <div>
                 {{ content }}
             </div>
@@ -53,6 +52,13 @@
             /**
              * Site-specific
              */
+
+            // Remove the title and subtitle since they are 
+            // included in the image. 
+            $('h1:first').remove();
+            $('h2:first').remove();
+            // Compensate for header removals. 
+            $('p:first').css('margin-top', '24px');
 
             // Highlight the "Read the rationale" section.
             $('a[href="http://mattnorris.me/whispernote#why_not_use_my_clippingstxt"]')

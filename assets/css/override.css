@@ -16,6 +16,10 @@ body {
     font-family: arvo, serif, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+img.jumbo {
+    width: 100%;
+}
+
 aside {
     font-family: josefin-slab, serif;
 }
