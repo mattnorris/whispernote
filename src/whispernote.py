@@ -87,7 +87,8 @@ class Mailer:
             encode_base64(attachment)
 
         file.close()
-        attachment.add_header('Content-Disposition', 'attachment', filename=os.path.basename(attachmentFilePath))
+        attachment.add_header('Content-Disposition', 'attachment', 
+            filename=os.path.basename(attachmentFilePath))
         return attachment
 
 def create_enid(huri): 
@@ -114,6 +115,9 @@ def get_all_highlights(soup):
     """
     # Get all of the span elements whose class is "highlight". 
     highlights = soup.find_all('span', 'highlight')
+
+    # TODO: If HTML is not found, then we are using My Clippings.txt. 
+
     hdicts = []
     for highlight in highlights: 
         # Save the Kindle URI link. 
