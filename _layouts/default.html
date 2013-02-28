@@ -1,77 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>{{ page.title }}</title>
-        <!-- Bootstrap -->
-        <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
-        <!-- Overrride some styles. -->
-        <link href="assets/css/override.css" rel="stylesheet" media="screen"/>
-        <!-- Assign styles to elements. --> 
-        <link href="assets/css/assign.css" rel="stylesheet" media="screen"/>
-    </head>
-    
-    <body>
-        <!-- Place image outside so it can expand to the full page width. -->
-        <img class="jumbo" src="{{ page.image }}" alt="{{ page.title }}" />
-        <div class="container-fluid">
-            <div>
+<head>
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="assets/bootstrap-responsive.css" rel="stylesheet">
+    <meta name="Description" content="" />
+    <meta name="author" content="Matt Norris" />
+
+    <link type="text/css" rel="stylesheet" href="assets/css/bootstrap.less.css" />
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span1">
+                <!-- Responsive left gutter for cosmetics only-->
+            </div>
+            <div class="span10">
                 {{ content }}
             </div>
-            <footer class="well">
-                See more at <a href="http://mattnorris.me">mattnorris.me</a>
-            </footer>
+            <div class="span1">
+                <!-- Responsive right gutter for cosmetics only-->
+            </div>
         </div>
-    </body>
+    </div>
+</body>
 
-    <!-- Bootstrap -->
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <!-- Web fonts -->
-    <script src="http://use.edgefonts.net/arvo.js"></script>
-    <link href='http://fonts.googleapis.com/css?family=Raleway:800' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
+<!-- Bootstrap -->
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 
-    <script>
-        $(function() {
-            /**
-             * Common 
-             */
-
-            // Remove the README's "More" section. 
-            $('#more:first').next().remove(); // link first...
-            $('#more:first').remove(); // ...now header
-
-            // Make all of the headers uppercase and give them anchors. 
-            $.each($('h1'), function(){
-                $(this).text($(this).text().toUpperCase()); 
-            });
-
-            /**
-             * Site-specific
-             */
-
-            // Remove the title and subtitle since they are 
-            // included in the image. 
-            $('h1:first').remove();
-            $('h2:first').remove();
-            // Compensate for header removals. 
-            $('p:first').css('margin-top', '24px');
-
-            // Highlight the "Read the rationale" section.
-            $('a[href="http://mattnorris.me/whispernote#why_not_use_my_clippingstxt"]')
-                .parent().addClass("alert alert-info");
-
-            // Get all the option headers and apply a "code" font. 
-            $('#d_debug').addClass('code-option');
-            $('#l_limit').addClass('code-option');
-            $('#s_start').addClass('code-option');
-
-            // Highlight the "Fork me" link. 
-            $('a[href="http://github.com/mattnorris"]')
-                .addClass('btn btn-primary');
+<script>
+    $(function() {
+        // Highlight the "Read the rationale" sections.
+        $('a:contains("Read the rationale.")').each(function() {
+            $(this).parent().addClass("alert alert-info");
         });
-    </script>
+    });
+</script>
+
 </html>
