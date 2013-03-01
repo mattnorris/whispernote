@@ -25,12 +25,34 @@
 
 // Base CSS
 @import "bootstrap/less/type.less";
+h1 {
+  color: @orange;
+}
+
+blockquote {
+  // Make the block quote look like a note card by adding a border and shadow.
+  padding: 15px;
+  margin: @baseLineHeight*2 0;
+  border: @gray;
+  .box-shadow(0 0 16px 3px @grayLight);
+
+  p {
+    // Put natural margins back in paragraphs.
+    margin-bottom: @baseLineHeight;
+  }
+}
+
 @import "bootstrap/less/code.less";
+code {
+  color: @grayDark;
+}
+
 @import "bootstrap/less/forms.less";
 @import "bootstrap/less/tables.less";
 
 // Components: common
-@import "bootstrap/less/sprites.less";
+//@import "bootstrap/less/sprites.less";
+@import "bootstrap/less/font-awesome.less";
 @import "bootstrap/less/dropdowns.less";
 @import "bootstrap/less/wells.less";
 @import "bootstrap/less/component-animations.less";
@@ -62,5 +84,24 @@
 @import "bootstrap/less/carousel.less";
 @import "bootstrap/less/hero-unit.less";
 
+// Custom components: Jumbotron
+@import "bootstrap-extended.less";
+
 // Utility classes
 @import "bootstrap/less/utilities.less"; // Has to be last to override when necessary
+
+// Custom styles
+.letterbox {
+  width: 100%;
+  background-color: black;
+  // Hide the overflow; otherwise, the image inside the div will not expand it
+  // because it is floated.
+  // http://stackoverflow.com/a/2614707/154065
+  overflow: hidden;
+}
+
+#elephant {
+  background-image: url("../img/whispernote-github-banner.jpg");
+  background-repeat: no-repeat;
+  height: 400px;
+}

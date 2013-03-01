@@ -4,23 +4,21 @@
     <meta charset="utf-8">
     <title>{{ page.title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="assets/bootstrap-responsive.css" rel="stylesheet">
+    <!--<link href="assets/bootstrap-responsive.css" rel="stylesheet">-->
     <meta name="Description" content="" />
     <meta name="author" content="Matt Norris" />
 
     <link type="text/css" rel="stylesheet" href="assets/css/bootstrap.less.css" />
 </head>
 <body>
+    <div class="letterbox">
+        <img class="pull-right" src="{{ page.image }}" alt="{{ page.title }}" />
+    </div>
     <div class="container-fluid">
+
         <div class="row-fluid">
-            <div class="span1">
-                <!-- Responsive left gutter for cosmetics only-->
-            </div>
-            <div class="span10">
+            <div class="span12">
                 {{ content }}
-            </div>
-            <div class="span1">
-                <!-- Responsive right gutter for cosmetics only-->
             </div>
         </div>
     </div>
@@ -35,6 +33,7 @@
         // Highlight the "Read the rationale" sections.
         $('a:contains("Read the rationale.")').each(function() {
             $(this).parent().addClass("alert alert-info");
+//            $(this).prepend('<i class="icon-camera-retro"></i>');
         });
     });
 </script>
