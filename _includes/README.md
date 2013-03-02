@@ -126,4 +126,4 @@ Copyright (c) Matt Norris and licensed under the MIT license. See the LICENSE fi
 
 # More 
 
-Read the [Whispernote Project Page](http://mattnorris.me/whispernote) for FAQs and rationale. 
+Read the [Whispernote Project Page](http://mattnorris.me/whispernote) for [FAQs and rationale]((http://mattnorris.me/whispernote/more.html).

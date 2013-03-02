@@ -51,8 +51,11 @@ code {
 @import "bootstrap/less/tables.less";
 
 // Components: common
+
+// Replace sprites with font-awesome.
 //@import "bootstrap/less/sprites.less";
-@import "bootstrap/less/font-awesome.less";
+@import "font-awesome.less";
+
 @import "bootstrap/less/dropdowns.less";
 @import "bootstrap/less/wells.less";
 @import "bootstrap/less/component-animations.less";
@@ -91,13 +94,38 @@ code {
 @import "bootstrap/less/utilities.less"; // Has to be last to override when necessary
 
 // Custom styles
+#nav-github-download {
+  font-size: @fontSizeLarge;
+  color: @orange;
+}
+#nav-github-fork {
+  font-size: @fontSizeLarge;
+  color: @blue;
+}
+
+//#dis-intro {
+//  color: @gray;
+//  font-size: @fontSizeLarge;
+//  padding: @paddingLarge;
+//}
+//
+//.initial-letters {
+//  color: @orange;
+//  font-size: 80px;
+//}
+
 .letterbox {
   width: 100%;
   background-color: black;
   // Hide the overflow; otherwise, the image inside the div will not expand it
   // because it is floated.
   // http://stackoverflow.com/a/2614707/154065
-  overflow: hidden;
+//  overflow: hidden;
+
+  // Add some "padding" after the image.
+  img {
+    margin-bottom: @baseLineHeight;
+  }
 }
 
 #elephant {

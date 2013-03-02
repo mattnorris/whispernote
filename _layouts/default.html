@@ -2,39 +2,83 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>{{ page.title }}</title>
+    <title>{{ page.project }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--<link href="assets/bootstrap-responsive.css" rel="stylesheet">-->
     <meta name="Description" content="" />
     <meta name="author" content="Matt Norris" />
 
     <link type="text/css" rel="stylesheet" href="assets/css/bootstrap.less.css" />
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
 </head>
 <body>
-    <div class="letterbox">
-        <img class="pull-right" src="{{ page.image }}" alt="{{ page.title }}" />
-    </div>
-    <div class="container-fluid">
+    <!-- Navbar
+    ================================================== -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
 
-        <div class="row-fluid">
-            <div class="span12">
-                {{ content }}
+                <div class="nav-collapse collapse">
+                    <!-- Regular nav links -->
+                    <ul class="nav">
+                        <li class="">
+                            <a href="./index.html">Home</a>
+                        </li>
+                        <li class="">
+                            <a href="./getting-started.html">Get started</a>
+                        </li>
+                        <li class="">
+                            <a href="./more.html">More</a>
+                        </li>
+                    </ul>
+                    <!-- Github links -->
+                    <ul class="nav pull-right">
+                        <li class="">
+                            <a id="nav-github-download" href="{{ page.download }}"><i class="icon-download"></i> Download</a>
+                        </li>
+                        <li class="">
+                            <a id="nav-github-fork" href="https://github.com/mattnorris/{{ page.project }}"><i class="icon-github"></i> Fork me</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
+
+    <!-- Banner -->
+    <div class="letterbox">
+        <img class="pull-right" src="{{ page.image }}" alt="{{ page.title }}" />
+    </div>
+
+    <div class="container-fluid">
+        {{ content }}
+
+        <!-- Footer -->
+
+    </div>
+
+
 </body>
 
-<!-- Bootstrap -->
-<script src="http://code.jquery.com/jquery-latest.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 
 <script>
     $(function() {
+        // Highlight the active nav link.
+        // TODO: Make this a plugin; or, at the very least, a gist.
+        var url = window.location.pathname;
+        var filename = url.substr(url.lastIndexOf('/') + 1);
+        $('.navbar a[href$="' + filename + '"]').parent().addClass("active");
+
         // Highlight the "Read the rationale" sections.
         $('a:contains("Read the rationale.")').each(function() {
             $(this).parent().addClass("alert alert-info");
-//            $(this).prepend('<i class="icon-camera-retro"></i>');
-        });
+        }).parent().prepend('<i class="icon-question-sign"></i>&nbsp;');
     });
 </script>
 
