@@ -87,32 +87,33 @@ code {
 @import "bootstrap/less/carousel.less";
 @import "bootstrap/less/hero-unit.less";
 
+// Optional components: responsive features
+@import "bootstrap/less/responsive.less";
+.nav-collapse .nav {
+  margin: 0 0 0;
+}
+
 // Custom components: Jumbotron
 @import "bootstrap-extended.less";
+.jumbotron:after {
+  background-color: @black;
+  background-image: url("../img/whispernote-github-banner.jpg");
+  background-repeat: no-repeat;
+  opacity: 1;
+}
 
 // Utility classes
 @import "bootstrap/less/utilities.less"; // Has to be last to override when necessary
 
 // Custom styles
 #nav-github-download {
-  font-size: @fontSizeLarge;
+//  font-size: @fontSizeLarge;
   color: @orange;
 }
 #nav-github-fork {
-  font-size: @fontSizeLarge;
+//  font-size: @fontSizeLarge;
   color: @blue;
 }
-
-//#dis-intro {
-//  color: @gray;
-//  font-size: @fontSizeLarge;
-//  padding: @paddingLarge;
-//}
-//
-//.initial-letters {
-//  color: @orange;
-//  font-size: 80px;
-//}
 
 .letterbox {
   width: 100%;
@@ -128,8 +129,8 @@ code {
   }
 }
 
-#elephant {
+#banner {
   background-image: url("../img/whispernote-github-banner.jpg");
   background-repeat: no-repeat;
-  height: 400px;
+  height: 544px;
 }

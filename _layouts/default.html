@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <title>{{ page.project }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--<link href="assets/bootstrap-responsive.css" rel="stylesheet">-->
+    <!--<link type="text/css" rel="stylesheet" href="assets/bootstrap/css/bootstrap-responsive.css" />-->
+
     <meta name="Description" content="" />
     <meta name="author" content="Matt Norris" />
 
@@ -38,7 +39,7 @@
                     </ul>
                     <!-- Github links -->
                     <ul class="nav pull-right">
-                        <li class="">
+                        <li >
                             <a id="nav-github-download" href="{{ page.download }}"><i class="icon-download"></i> Download</a>
                         </li>
                         <li class="">
@@ -51,9 +52,7 @@
     </div>
 
     <!-- Banner -->
-    <div class="letterbox">
-        <img class="pull-right" src="{{ page.image }}" alt="{{ page.title }}" />
-    </div>
+    <img class="letterbox" src="../assets/img/whispernote-github-banner.jpg" alt="{{ page.title }}" />
 
     <div class="container-fluid">
         {{ content }}
