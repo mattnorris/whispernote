@@ -4,5 +4,9 @@ pygments: true
 lsi: false
 safe: true
 
+# Exclude project-specific and source files when generating the site.
+# TODO: Ignore .less files
+exclude: docs/, lib/, scripts/
+
 # "Watch" the site for changes and apply them automatically. 
 auto: true

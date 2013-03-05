@@ -13,18 +13,18 @@
 
 // Core variables and mixins
 @import "variables.less"; // Modify this for custom colors, font-sizes, etc
-@import "bootstrap/less/mixins.less";
+@import "../../lib/bootstrap/less/mixins.less";
 
 // CSS Reset
-@import "bootstrap/less/reset.less";
+@import "../../lib/bootstrap/less/reset.less";
 
 // Grid system and page structure
-@import "bootstrap/less/scaffolding.less";
-@import "bootstrap/less/grid.less";
-@import "bootstrap/less/layouts.less";
+@import "../../lib/bootstrap/less/scaffolding.less";
+@import "../../lib/bootstrap/less/grid.less";
+@import "../../lib/bootstrap/less/layouts.less";
 
 // Base CSS
-@import "bootstrap/less/type.less";
+@import "../../lib/bootstrap/less/type.less";
 h1 {
   color: @orange;
 }
@@ -42,13 +42,13 @@ blockquote {
   }
 }
 
-@import "bootstrap/less/code.less";
+@import "../../lib/bootstrap/less/code.less";
 code {
   color: @grayDark;
 }
 
-@import "bootstrap/less/forms.less";
-@import "bootstrap/less/tables.less";
+@import "../../lib/bootstrap/less/forms.less";
+@import "../../lib/bootstrap/less/tables.less";
 
 // Components: common
 
@@ -56,39 +56,39 @@ code {
 //@import "bootstrap/less/sprites.less";
 @import "font-awesome.less";
 
-@import "bootstrap/less/dropdowns.less";
-@import "bootstrap/less/wells.less";
-@import "bootstrap/less/component-animations.less";
-@import "bootstrap/less/close.less";
+@import "../../lib/bootstrap/less/dropdowns.less";
+@import "../../lib/bootstrap/less/wells.less";
+@import "../../lib/bootstrap/less/component-animations.less";
+@import "../../lib/bootstrap/less/close.less";
 
 // Components: Buttons & Alerts
-@import "bootstrap/less/buttons.less";
-@import "bootstrap/less/button-groups.less";
-@import "bootstrap/less/alerts.less"; // Note: alerts share common CSS with buttons and thus have styles in buttons.less
+@import "../../lib/bootstrap/less/buttons.less";
+@import "../../lib/bootstrap/less/button-groups.less";
+@import "../../lib/bootstrap/less/alerts.less"; // Note: alerts share common CSS with buttons and thus have styles in buttons.less
 
 // Components: Nav
-@import "bootstrap/less/navs.less";
-@import "bootstrap/less/navbar.less";
-@import "bootstrap/less/breadcrumbs.less";
-@import "bootstrap/less/pagination.less";
-@import "bootstrap/less/pager.less";
+@import "../../lib/bootstrap/less/navs.less";
+@import "../../lib/bootstrap/less/navbar.less";
+@import "../../lib/bootstrap/less/breadcrumbs.less";
+@import "../../lib/bootstrap/less/pagination.less";
+@import "../../lib/bootstrap/less/pager.less";
 
 // Components: Popovers
-@import "bootstrap/less/modals.less";
-@import "bootstrap/less/tooltip.less";
-@import "bootstrap/less/popovers.less";
+@import "../../lib/bootstrap/less/modals.less";
+@import "../../lib/bootstrap/less/tooltip.less";
+@import "../../lib/bootstrap/less/popovers.less";
 
 // Components: Misc
-@import "bootstrap/less/thumbnails.less";
-@import "bootstrap/less/media.less";
-@import "bootstrap/less/labels-badges.less";
-@import "bootstrap/less/progress-bars.less";
-@import "bootstrap/less/accordion.less";
-@import "bootstrap/less/carousel.less";
-@import "bootstrap/less/hero-unit.less";
+@import "../../lib/bootstrap/less/thumbnails.less";
+@import "../../lib/bootstrap/less/media.less";
+@import "../../lib/bootstrap/less/labels-badges.less";
+@import "../../lib/bootstrap/less/progress-bars.less";
+@import "../../lib/bootstrap/less/accordion.less";
+@import "../../lib/bootstrap/less/carousel.less";
+@import "../../lib/bootstrap/less/hero-unit.less";
 
 // Optional components: responsive features
-@import "bootstrap/less/responsive.less";
+@import "../../lib/bootstrap/less/responsive.less";
 .nav-collapse .nav {
   margin: 0 0 0;
 }
@@ -103,7 +103,7 @@ code {
 }
 
 // Utility classes
-@import "bootstrap/less/utilities.less"; // Has to be last to override when necessary
+@import "../../lib/bootstrap/less/utilities.less"; // Has to be last to override when necessary
 
 // Custom styles
 #nav-github-download {
@@ -114,7 +114,6 @@ code {
 //  font-size: @fontSizeLarge;
   color: @blue;
 }
-
 .letterbox {
   width: 100%;
   background-color: black;
