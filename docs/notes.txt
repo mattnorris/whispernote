@@ -1,0 +1,12 @@
+# Fonts
+
+## Evernote
+
+    // The Evernote font
+    @import url("http://fonts.googleapis.com/css?family=PT+Serif");
+    @customSerifFont: 'PT Serif', serif;
+
+# Lessons Learned
+
+When doing the custom bootstrap stuff, make sure to *REMOVE* `bootstrap.less` and `variables.less` from the source bootstrap directory.
+TODO: Do this if automating.

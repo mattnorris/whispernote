@@ -89,17 +89,65 @@ code {
 
 // Optional components: responsive features
 @import "../../lib/bootstrap/less/responsive.less";
-.nav-collapse .nav {
-  margin: 0 0 0;
+// Remove the bottom margin from the nav so there is no gap
+// between it and the banner image.
+.navbar-fixed-top {
+  margin-bottom: 0;
 }
+//.nav-collapse .nav {
+//  margin: 0 0 0;
+//}
+
+// TODO: Fix navbar fixed margin on top when on desktop browser
 
 // Custom components: Jumbotron
 @import "bootstrap-extended.less";
-.jumbotron:after {
-  background-color: @black;
+.jumbotron {
+
+  text-align: left;
+  #gradient > .directional(@blue, @black, 135deg);
   background-image: url("../img/whispernote-github-banner.jpg");
   background-repeat: no-repeat;
-  opacity: 1;
+  background-position:bottom center;
+
+  .masthead {
+    padding-left: @fluidGridColumnWidth;
+    h1 {
+      font-family: @baseFontFamily;
+      font-size: 60px;
+    }
+    p {
+      font-family: @baseFontFamily;
+      font-size: 30px;
+    }
+  }
+}
+
+// Tablets? and below
+@media (max-width: 767px) {
+  // Nullify the extra padding for media queries; we want the
+  // banner image to still span the whole page.
+  // Take care of the padding in container-fluid instead.
+  body {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .container-fluid {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  // Now on to the jumbotron...
+  .jumbotron {
+    // Shrink the banner image and the font
+    // to accommodate smaller screens.
+    background-image: url("../img/whispernote-github-banner-tablet.jpg");
+    background-position:top center;
+
+    .masthead h1 {
+      font-size: 40px;
+    }
+  }
 }
 
 // Utility classes
@@ -123,9 +171,9 @@ code {
 //  overflow: hidden;
 
   // Add some "padding" after the image.
-  img {
-    margin-bottom: @baseLineHeight;
-  }
+//  img {
+//    margin-bottom: @baseLineHeight;
+//  }
 }
 
 #banner {

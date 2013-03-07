@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <title>{{ page.project }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--<link type="text/css" rel="stylesheet" href="assets/bootstrap/css/bootstrap-responsive.css" />-->
 
     <meta name="Description" content="" />
     <meta name="author" content="Matt Norris" />
@@ -52,7 +51,15 @@
     </div>
 
     <!-- Banner -->
-    <img class="letterbox" src="../assets/img/whispernote-github-banner.jpg" alt="{{ page.title }}" />
+
+    <div class="jumbotron">
+        <div class="masthead">
+            <h1>{{ page.project }}</h1>
+            <p>{{ page.headline }}</p>
+            <!-- TODO: Download button here on the first page. -->
+        </div>
+    <!--<img class="letterbox" src="../assets/img/whispernote-github-banner.jpg" alt="{{ page.title }}" />-->
+    </div>
 
     <div class="container-fluid">
         {{ content }}

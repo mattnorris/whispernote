@@ -1,20 +1,20 @@
 //
 // Variables
 // --------------------------------------------------
-// The Evernote font
-//@import url("http://fonts.googleapis.com/css?family=PT+Serif");
-//@customSerifFont: 'PT Serif', serif;
-
-// Free alternatives to REAL SIMPLE fonts
-@import url("museo-slab.css");
-@customHeadingsFont: 'MuseoSlab-500';
-
-@import url(http://fonts.googleapis.com/css?family=Lato:400,900,400italic,900italic);
-@customSansFont: 'Lato', sans-serif;
 
 // Global values
 // --------------------------------------------------
 
+// Free alternatives to REAL SIMPLE fonts
+// --------------------------------------
+
+// Headers
+@import "museo-slab.css";
+@customHeadingsFont: 'MuseoSlab-500';
+
+// Body
+@import url(http://fonts.googleapis.com/css?family=Lato:400,900,400italic,900italic);
+@customSansFont: 'Lato', sans-serif;
 
 // Grays
 // -------------------------
@@ -54,7 +54,7 @@
 // Typography
 // -------------------------
 @sansFontFamily:        @customSansFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
-@serifFontFamily:       Georgia, "Times New Roman", Times, serif;
+@serifFontFamily:       @customHeadingsFont, Georgia, "Times New Roman", Times, serif;
 @monoFontFamily:        Monaco, Menlo, Consolas, "Courier New", monospace;
 
 @baseFontSize:          14px;
@@ -64,10 +64,8 @@
 @altFontFamily:         @serifFontFamily;
 //@altFontFamily:         @sansFontFamily;
 
-//@headingsFontFamily:    inherit; // empty to use BS default, @baseFontFamily
-//@headingsFontWeight:    bold;    // instead of browser default, bold
-@headingsFontFamily: @customHeadingsFont;
-@headingsFontWeight: normal;
+@headingsFontFamily:    @customHeadingsFont;
+@headingsFontWeight:    normal;
 @headingsColor:         inherit; // empty to use BS default, @textColor
 
 
