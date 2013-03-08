@@ -4,25 +4,31 @@
     <meta charset="utf-8">
     <title>{{ page.project }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <meta name="Description" content="" />
     <meta name="author" content="Matt Norris" />
-
     <link type="text/css" rel="stylesheet" href="assets/css/bootstrap.less.css" />
+    <!--
+    Include jquery at top so the $ variable can be used in the body.
+    When using templates like this, you can't always wait for the doc
+    to fully load.
+    -->
     <script src="http://code.jquery.com/jquery-latest.js"></script>
 </head>
 <body>
-    <!-- Navbar
-    ================================================== -->
+    <!--
+    Navbar
+    Source: http://twitter.github.com/bootstrap/
+    -->
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="navbar-inner">
             <div class="container-fluid">
+                <!-- Expand button for smaller devices -->
                 <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-
+                <!-- Nav menu -->
                 <div class="nav-collapse collapse">
                     <!-- Regular nav links -->
                     <ul class="nav">
@@ -51,28 +57,26 @@
     </div>
 
     <!-- Banner -->
-
     <div class="jumbotron">
         <div class="masthead">
             <h1>{{ page.project }}</h1>
             <p>{{ page.headline }}</p>
             <!-- TODO: Download button here on the first page. -->
         </div>
-    <!--<img class="letterbox" src="../assets/img/whispernote-github-banner.jpg" alt="{{ page.title }}" />-->
     </div>
 
     <div class="container-fluid">
         {{ content }}
-        <!-- Footer -->
+        <!-- TODO: Footer -->
     </div>
 </body>
 
+<!-- Scripts -->
 <script src="assets/js/bootstrap.min.js"></script>
-
 <script>
     $(function() {
         // Highlight the active nav link.
-        // TODO: Make this a plugin; or, at the very least, a gist.
+        // TODO: Make this a plugin.
         var url = window.location.pathname;
         var filename = url.substr(url.lastIndexOf('/') + 1);
         $('.navbar a[href$="' + filename + '"]').parent().addClass("active");
@@ -83,5 +87,4 @@
         }).parent().prepend('<i class="icon-question-sign"></i>&nbsp;');
     });
 </script>
-
 </html>

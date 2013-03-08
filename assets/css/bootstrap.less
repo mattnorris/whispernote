@@ -7,7 +7,8 @@
  *
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  *
- * Styles customized using this method: http://stackoverflow.com/a/10505295/154065
+ * Styles customized using this method:
+ *   http://stackoverflow.com/a/10505295/154065
  * Author: Matt Norris @mattnorrisme
  */
 
@@ -123,11 +124,15 @@ code {
   }
 }
 
-// Tablets? and below
+// Tablets and below
 @media (max-width: 767px) {
-  // Nullify the extra padding for media queries; we want the
-  // banner image to still span the whole page.
-  // Take care of the padding in container-fluid instead.
+  // By default, Twitter Boostrap pads the body of mobile browsers
+  // with a media query. This makes makes your site look good in most cases,
+  // but works against you if you want a Jumbotron-style header.
+  //
+  // Remove the extra padding for media queries so the Jumbotron
+  // still spans the full width of the page, even in mobile browsers.
+  // Instead, move the padding into the container-fluid class.
   body {
     padding-left: 0;
     padding-right: 0;
@@ -155,29 +160,8 @@ code {
 
 // Custom styles
 #nav-github-download {
-//  font-size: @fontSizeLarge;
   color: @orange;
 }
 #nav-github-fork {
-//  font-size: @fontSizeLarge;
   color: @blue;
-}
-.letterbox {
-  width: 100%;
-  background-color: black;
-  // Hide the overflow; otherwise, the image inside the div will not expand it
-  // because it is floated.
-  // http://stackoverflow.com/a/2614707/154065
-//  overflow: hidden;
-
-  // Add some "padding" after the image.
-//  img {
-//    margin-bottom: @baseLineHeight;
-//  }
-}
-
-#banner {
-  background-image: url("../img/whispernote-github-banner.jpg");
-  background-repeat: no-repeat;
-  height: 544px;
 }
