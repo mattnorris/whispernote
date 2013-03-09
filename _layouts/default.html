@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>{{ page.project }}</title>
+    <title>{{ site.project.name }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="Description" content="" />
-    <meta name="author" content="Matt Norris" />
+    <meta name="author" content="{{ site.author.name }}" />
     <link type="text/css" rel="stylesheet" href="assets/css/bootstrap.less.css" />
     <!--
     Include jquery at top so the $ variable can be used in the body.
@@ -45,10 +45,10 @@
                     <!-- Github links -->
                     <ul class="nav pull-right">
                         <li >
-                            <a id="nav-github-download" href="{{ page.download }}"><i class="icon-download"></i> Download</a>
+                            <a id="nav-github-download" href="{{ site.project.download }}"><i class="icon-download"></i> Download</a>
                         </li>
                         <li class="">
-                            <a id="nav-github-fork" href="https://github.com/mattnorris/{{ page.project }}"><i class="icon-github"></i> Fork</a>
+                            <a id="nav-github-fork" href="{{ site.project.fork }}"><i class="icon-github"></i> Fork</a>
                         </li>
                     </ul>
                 </div>
@@ -59,9 +59,19 @@
     <!-- Banner -->
     <div class="jumbotron">
         <div class="masthead">
-            <h1>{{ page.project }}</h1>
-            <p>{{ page.headline }}</p>
-            <!-- TODO: Download button here on the first page. -->
+            <div class="container">
+                <!--<div class="row-fluid">-->
+                    <div class="span4">
+                        <h1>{{ site.project.name }}</h1>
+                        <p>{{ site.project.description }}</p>
+                        <p>
+                            <a class="btn btn-primary btn-large"
+                                href="{{ site.project.download }}">Download {{ site.project.name }}</a>
+                        </p>
+                    </div>
+                    <div class="span8"></div>
+                <!--</div>-->
+            </div>
         </div>
     </div>
 

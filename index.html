@@ -1,23 +1,25 @@
 ---
 layout: default
-project: Whispernote
-headline: Create Evernote notes <br/>from Kindle highlights
-image: assets/img/whispernote-github-banner.jpg
-download: https://github.com/mattnorris/whispernote/blob/master/src/whispernote.py
 ---
 <div class="row-fluid">
-    <!--<div class="span2"></div>-->
-    <div class="span12">
-        <div class="hero-unit">
-            <p><h1>You love</h1> reading your <b>Kindle</b>, and you make lots of highlights
-                to review later. You also use <b>Evernote</b> to remember...
-                well, just about everything. Now you can easily save
-                <em>each highlight</em> as a separate note in Evernote.
-            </p>
-            <p>
-                <a class="btn btn-primary btn-large" href="{{ page.download }}">Download Whispernote</a>
-            </p>
-        </div>
+    <div class="span1"></div>
+    <div class="span10">
+        <!-- DO NOT INDENT JEKYLL SYNTAX.
+        It will render as code because of the indentations. -->
+
+{% capture README %}
+{% include README.md %}
+{% endcapture %}
+{{ README | markdownify }}
+
     </div>
-    <!--<div class="span2"></div>-->
+    <div class="span1"></div>
 </div>
+
+<script>
+    $(function() {
+        // Remove the README file's initial intro.
+        // http://stackoverflow.com/a/2698303/154065
+//        $('h1#whispernote').nextUntil('h1').andSelf().remove();
+    });
+</script>

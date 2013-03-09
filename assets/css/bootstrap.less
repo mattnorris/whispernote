@@ -104,7 +104,6 @@ code {
 // Custom components: Jumbotron
 @import "bootstrap-extended.less";
 .jumbotron {
-
   text-align: left;
   #gradient > .directional(@blue, @black, 135deg);
   background-image: url("../img/whispernote-github-banner.jpg");
@@ -112,7 +111,7 @@ code {
   background-position:bottom center;
 
   .masthead {
-    padding-left: @fluidGridColumnWidth;
+//    padding-left: @fluidGridColumnWidth;
     h1 {
       font-family: @baseFontFamily;
       font-size: 60px;
@@ -120,6 +119,11 @@ code {
     p {
       font-family: @baseFontFamily;
       font-size: 30px;
+    }
+    // Overwrite to be orange.
+    .btn-primary {
+      .buttonBackground(@btnWarningBackground, @btnWarningBackgroundHighlight);
+//      color: @textColor;
     }
   }
 }

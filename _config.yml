@@ -10,3 +10,21 @@ exclude: docs/, lib/, scripts/
 
 # "Watch" the site for changes and apply them automatically. 
 auto: true
+
+################################################################################
+# Global variables used site-wide
+################################################################################
+
+project:
+  name: Whispernote
+  description: Create Evernote notes from Kindle highlights
+  download: https://github.com/mattnorris/whispernote/raw/master/src/whispernote.py
+  fork: https://github.com/mattnorris/whispernote
+
+author:
+  name: Matt Norris
+  email: m@mattnorris.me
+  github: mattnorris
+  twitter: mattnorrisme
+
+image: assets/img/whispernote-github-banner.jpg

@@ -1,0 +1,5 @@
+[submodule "twitter/bootstrap"]
+    path = lib/bootstrap
+    url = git://github.com/twitter/bootstrap
+    ignore = dirty
+    

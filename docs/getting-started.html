@@ -1,13 +1,13 @@
 ---
 layout: default
 project: Whispernote
-headline: Getting Started
 image: assets/img/whispernote-github-banner.jpg
-download: https://github.com/mattnorris/whispernote/blob/master/src/whispernote.py
+download: https://github.com/mattnorris/whispernote/raw/master/src/whispernote.py
 ---
 
 <div class="row-fluid">
-    <div class="span12">
+    <div class="span1"></div>
+    <div class="span10">
 
 <!-- DO NOT INDENT JEKYLL SYNTAX.
 It will render as code because of the indentations. -->
@@ -18,12 +18,13 @@ It will render as code because of the indentations. -->
 {{ README | markdownify }}
 
     </div>
+    <div class="span1"></div>
 </div>
 
 <script>
     $(function() {
         // Remove the README file's initial intro.
         // http://stackoverflow.com/a/2698303/154065
-        $('h1#whispernote').nextUntil('h1').andSelf().remove();
+//        $('h1#whispernote').nextUntil('h1').andSelf().remove();
     });
 </script>

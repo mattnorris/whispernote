@@ -49,7 +49,7 @@ The second part contains a *Highlight ID* and *Batch ID*. If you run **Whisperno
 
 Search Evernote for the *Highlight ID* to find duplicate notes, or for the *Batch ID* to find all the notes created in a particular session. 
 
-# Detailed Instructions
+# Instructions
 
 ## Get Your Highlights
 
@@ -126,4 +126,4 @@ Copyright (c) Matt Norris and licensed under the MIT license. See the LICENSE fi
 
 # More 
 
-Read the [Whispernote Project Page](http://mattnorris.me/whispernote) for [FAQs and rationale]((http://mattnorris.me/whispernote/more.html).
+Read the [Whispernote wiki](https://github.com/mattnorris/whispernote/wiki) for [FAQs and rationale](https://github.com/mattnorris/whispernote/wiki/FAQs).

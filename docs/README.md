@@ -1,4 +1,5 @@
-# Project Notes & Documentation
+# Jekyll & Bootstrap
+## Project Notes & Documentation
 
 I used [Jekyll](https://github.com/mojombo/jekyll) and [Bootstrap](http://twitter.github.com/bootstrap/) to create my GitHub Project Pages. 
 
