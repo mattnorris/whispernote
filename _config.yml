@@ -17,7 +17,7 @@ auto: true
 
 project:
   name: Whispernote
-  description: Create Evernote notes from Kindle highlights
+  description: Create Evernote notes <br/>from Kindle highlights
   download: https://github.com/mattnorris/whispernote/raw/master/src/whispernote.py
   fork: https://github.com/mattnorris/whispernote
 

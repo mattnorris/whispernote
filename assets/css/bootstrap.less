@@ -12,6 +12,13 @@
  * Author: Matt Norris @mattnorrisme
  */
 
+// Mixins
+.mobile-padding(@padding: 20px) {
+  padding-left: @padding;
+  padding-right: @padding;
+}
+
+
 // Core variables and mixins
 @import "variables.less"; // Modify this for custom colors, font-sizes, etc
 @import "../../lib/bootstrap/less/mixins.less";
@@ -92,9 +99,9 @@ code {
 @import "../../lib/bootstrap/less/responsive.less";
 // Remove the bottom margin from the nav so there is no gap
 // between it and the banner image.
-.navbar-fixed-top {
-  margin-bottom: 0;
-}
+//.navbar-fixed-top {
+//  margin-bottom: 0;
+//}
 //.nav-collapse .nav {
 //  margin: 0 0 0;
 //}
@@ -108,11 +115,13 @@ code {
   #gradient > .directional(@blue, @black, 135deg);
   background-image: url("../img/whispernote-github-banner.jpg");
   background-repeat: no-repeat;
-  background-position:bottom center;
+  background-position: center center;
+  margin-bottom: @baseLineHeight;
 
   .masthead {
 //    padding-left: @fluidGridColumnWidth;
     h1 {
+      font-weight: normal;
       font-family: @baseFontFamily;
       font-size: 60px;
     }
@@ -142,8 +151,7 @@ code {
     padding-right: 0;
   }
   .container-fluid {
-    padding-left: 20px;
-    padding-right: 20px;
+    .mobile-padding();
   }
 
   // Now on to the jumbotron...
@@ -153,8 +161,13 @@ code {
     background-image: url("../img/whispernote-github-banner-tablet.jpg");
     background-position:top center;
 
-    .masthead h1 {
-      font-size: 40px;
+    .masthead {
+      .container {
+        .mobile-padding();
+      }
+      h1 {
+        font-size: 40px;
+      }
     }
   }
 }
@@ -162,10 +175,10 @@ code {
 // Utility classes
 @import "../../lib/bootstrap/less/utilities.less"; // Has to be last to override when necessary
 
-// Custom styles
-#nav-github-download {
-  color: @orange;
-}
-#nav-github-fork {
-  color: @blue;
-}
+//// Custom styles
+//#nav-github-download {
+//  color: @orange;
+//}
+//#nav-github-fork {
+//  color: @blue;
+//}

@@ -18,8 +18,9 @@ layout: default
 
 <script>
     $(function() {
-        // Remove the README file's initial intro.
+        // Make the README file's initial intro a hero unit.
         // http://stackoverflow.com/a/2698303/154065
-//        $('h1#whispernote').nextUntil('h1').andSelf().remove();
+        $('h1#whispernote').nextUntil('h1').andSelf()
+                .wrapAll('<div class="hero-unit" />');
     });
 </script>

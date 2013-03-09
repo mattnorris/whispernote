@@ -2,4 +2,3 @@
     path = lib/bootstrap
     url = git://github.com/twitter/bootstrap
     ignore = dirty
-    

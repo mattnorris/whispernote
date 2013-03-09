@@ -1,7 +1,7 @@
 # Whispernote
 ## Create Evernote notes from Kindle highlights
 
-You love reading your **Kindle**, and you make lots of highlights to review later. You also use **Evernote** to remember... well, just about everything. Now you can easily save *each highlight* as a separate note in Evernote. 
+You love reading your **Kindle**, and you make lots of highlights to review later. You also use **Evernote** to remember... well, just about everything. Now you can easily **save each highlight as a separate note** in Evernote.
 
 # Example
 
@@ -30,7 +30,7 @@ Whispernote uses **Gmail** to create a new Evernote note for each highlight in *
 > - *Highlight ID:* openB004TP29C41368
 > - *Batch ID:* batch20121211171828
 
-Why Gmail? [Read the rationale.](http://mattnorris.me/whispernote)
+Why Gmail? [Read the rationale.](https://github.com/mattnorris/whispernote/wiki/FAQs)
 
 ## Output Details
 
@@ -55,7 +55,7 @@ Search Evernote for the *Highlight ID* to find duplicate notes, or for the *Batc
 
 It's recommended that you save a copy of the highlights page you want to process because your Kindle account pages won't load all of your highlights immediately. Instead, you must manually scroll to load more highlights (or use a [plugin](https://chrome.google.com/webstore/detail/auto-scroll/eochlhpceohhhfogfeladaifggikcjhk) to scroll while you get yourself a drink). 
 
-Why not use Kindle's `My Clippings.txt`? [Read the rationale.](http://mattnorris.me/whispernote#why_not_use_my_clippingstxt)
+Why not use Kindle's `My Clippings.txt`? [Read the rationale.](https://github.com/mattnorris/whispernote/wiki/FAQs)
 
 ### All Highlights
 
@@ -126,4 +126,4 @@ Copyright (c) Matt Norris and licensed under the MIT license. See the LICENSE fi
 
 # More 
 
-Read the [Whispernote wiki](https://github.com/mattnorris/whispernote/wiki) for [FAQs and rationale](https://github.com/mattnorris/whispernote/wiki/FAQs).
+Read the [Whispernote Wiki](https://github.com/mattnorris/whispernote/wiki) for [FAQs and rationale](https://github.com/mattnorris/whispernote/wiki/FAQs).

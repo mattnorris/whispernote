@@ -15,61 +15,49 @@
     <script src="http://code.jquery.com/jquery-latest.js"></script>
 </head>
 <body>
-    <!--
-    Navbar
-    Source: http://twitter.github.com/bootstrap/
-    -->
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container-fluid">
-                <!-- Expand button for smaller devices -->
-                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <!-- Nav menu -->
-                <div class="nav-collapse collapse">
-                    <!-- Regular nav links -->
-                    <ul class="nav">
-                        <li class="">
-                            <a href="./index.html">Home</a>
-                        </li>
-                        <li class="">
-                            <a href="./getting-started.html">Get started</a>
-                        </li>
-                        <li class="">
-                            <a href="./more.html">More</a>
-                        </li>
-                    </ul>
-                    <!-- Github links -->
-                    <ul class="nav pull-right">
-                        <li >
-                            <a id="nav-github-download" href="{{ site.project.download }}"><i class="icon-download"></i> Download</a>
-                        </li>
-                        <li class="">
-                            <a id="nav-github-fork" href="{{ site.project.fork }}"><i class="icon-github"></i> Fork</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!--&lt;!&ndash;-->
+    <!--Navbar-->
+    <!--Source: http://twitter.github.com/bootstrap/-->
+    <!--&ndash;&gt;-->
+    <!--<div class="navbar navbar-inverse navbar-fixed-top">-->
+        <!--<div class="navbar-inner">-->
+            <!--<div class="container-fluid">-->
+                <!--&lt;!&ndash; Expand button for smaller devices &ndash;&gt;-->
+                <!--<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">-->
+                    <!--<span class="icon-bar"></span>-->
+                    <!--<span class="icon-bar"></span>-->
+                    <!--<span class="icon-bar"></span>-->
+                <!--</button>-->
+                <!--&lt;!&ndash; Nav menu &ndash;&gt;-->
+                <!--<div class="nav-collapse collapse">-->
+                    <!--&lt;!&ndash; Regular nav links &ndash;&gt;-->
+                    <!--<ul class="nav">-->
+                        <!--<li class="">-->
+                            <!--<a href="./index.html">Home</a>-->
+                        <!--</li>-->
+                        <!--<li class="">-->
+                            <!--<a href="./getting-started.html">Get started</a>-->
+                        <!--</li>-->
+                        <!--<li class="">-->
+                            <!--<a href="./more.html">More</a>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
 
     <!-- Banner -->
     <div class="jumbotron">
         <div class="masthead">
             <div class="container">
-                <!--<div class="row-fluid">-->
-                    <div class="span4">
-                        <h1>{{ site.project.name }}</h1>
-                        <p>{{ site.project.description }}</p>
-                        <p>
-                            <a class="btn btn-primary btn-large"
-                                href="{{ site.project.download }}">Download {{ site.project.name }}</a>
-                        </p>
-                    </div>
-                    <div class="span8"></div>
+                <!--<div class="span4">-->
+                    <h1>{{ site.project.name }}</h1>
+                    <p>{{ site.project.description }}</p>
+                    <p>
+                        <a class="btn btn-primary btn-large"
+                            href="{{ site.project.download }}">Download {{ site.project.name }}</a>
+                    </p>
                 <!--</div>-->
             </div>
         </div>
