@@ -108,12 +108,13 @@ code {
 
 // TODO: Fix navbar fixed margin on top when on desktop browser
 
+
 // Custom components: Jumbotron
 @import "bootstrap-extended.less";
 .jumbotron {
   text-align: left;
   #gradient > .directional(@blue, @black, 135deg);
-  background-image: url("../img/whispernote-github-banner.jpg");
+  background-image: url("../img/whispernote-banner.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   margin-bottom: @baseLineHeight;
@@ -158,7 +159,7 @@ code {
   .jumbotron {
     // Shrink the banner image and the font
     // to accommodate smaller screens.
-    background-image: url("../img/whispernote-github-banner-tablet.jpg");
+    background-image: url("../img/whispernote-banner-tablet.jpg");
     background-position:top center;
 
     .masthead {
@@ -172,13 +173,11 @@ code {
   }
 }
 
-// Utility classes
-@import "../../lib/bootstrap/less/utilities.less"; // Has to be last to override when necessary
+@import "gh-fork-ribbon.less";
+.github-fork-ribbon {
+  background-color: @orange;
+}
 
-//// Custom styles
-//#nav-github-download {
-//  color: @orange;
-//}
-//#nav-github-fork {
-//  color: @blue;
-//}
+// Utility classes
+// Has to be last to override when necessary
+@import "../../lib/bootstrap/less/utilities.less";

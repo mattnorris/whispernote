@@ -15,38 +15,12 @@
     <script src="http://code.jquery.com/jquery-latest.js"></script>
 </head>
 <body>
-    <!--&lt;!&ndash;-->
-    <!--Navbar-->
-    <!--Source: http://twitter.github.com/bootstrap/-->
-    <!--&ndash;&gt;-->
-    <!--<div class="navbar navbar-inverse navbar-fixed-top">-->
-        <!--<div class="navbar-inner">-->
-            <!--<div class="container-fluid">-->
-                <!--&lt;!&ndash; Expand button for smaller devices &ndash;&gt;-->
-                <!--<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">-->
-                    <!--<span class="icon-bar"></span>-->
-                    <!--<span class="icon-bar"></span>-->
-                    <!--<span class="icon-bar"></span>-->
-                <!--</button>-->
-                <!--&lt;!&ndash; Nav menu &ndash;&gt;-->
-                <!--<div class="nav-collapse collapse">-->
-                    <!--&lt;!&ndash; Regular nav links &ndash;&gt;-->
-                    <!--<ul class="nav">-->
-                        <!--<li class="">-->
-                            <!--<a href="./index.html">Home</a>-->
-                        <!--</li>-->
-                        <!--<li class="">-->
-                            <!--<a href="./getting-started.html">Get started</a>-->
-                        <!--</li>-->
-                        <!--<li class="">-->
-                            <!--<a href="./more.html">More</a>-->
-                        <!--</li>-->
-                    <!--</ul>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-
+    <!-- Fork me ribbon -->
+    <div class="github-fork-ribbon-wrapper right">
+        <div class="github-fork-ribbon">
+            <a href="{{ site.project.fork }}">Fork me on GitHub</a>
+        </div>
+    </div>
     <!-- Banner -->
     <div class="jumbotron">
         <div class="masthead">
@@ -85,4 +59,5 @@
         }).parent().prepend('<i class="icon-question-sign"></i>&nbsp;');
     });
 </script>
+{%include google-analytics.html %}
 </html>
