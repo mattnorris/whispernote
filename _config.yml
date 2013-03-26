@@ -23,8 +23,10 @@ project:
 
 author:
   name: Matt Norris
-  email: m@mattnorris.me
+  site: http://mattnorris.me
+  email: matthew.g.norris@gmail.com
   github: mattnorris
   twitter: mattnorrisme
+  linkedin: mattnorrisme
 
 image: assets/img/whispernote-github-banner.jpg

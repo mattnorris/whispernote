@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
     <title>{{ site.project.name }}</title>
@@ -40,6 +40,12 @@
     <div class="container-fluid">
         {{ content }}
         <!-- TODO: Footer -->
+        <div class="row-fluid">
+            <div class="span1"></div>
+            <footer class="span10">
+                <a href="{{ site.author.site }}">MattNorris.me</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://github.com/{{ site.author.github }}"><i class="icon-github-alt"></i> GitHub</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.linkedin.com/in/{{ site.author.linkedin }}"><i class="icon-linkedin-sign"></i> LinkedIn</a>
+            </footer>
+            <div class="span1"></div>
     </div>
 </body>
 

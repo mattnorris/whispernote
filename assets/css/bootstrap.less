@@ -106,8 +106,13 @@ code {
 //  margin: 0 0 0;
 //}
 
-// TODO: Fix navbar fixed margin on top when on desktop browser
-
+// Custom styles
+footer {
+  border-top: 1px dotted @grayLight;
+  margin-top: 60px;
+  padding: 2px 4px;
+//  background-color: @grayLighter;
+}
 
 // Custom components: Jumbotron
 @import "bootstrap-extended.less";
@@ -133,7 +138,6 @@ code {
     // Overwrite to be orange.
     .btn-primary {
       .buttonBackground(@btnWarningBackground, @btnWarningBackgroundHighlight);
-//      color: @textColor;
     }
   }
 }
@@ -155,6 +159,17 @@ code {
     .mobile-padding();
   }
 
+  .hero-unit {
+    padding: 30px; // half the original padding
+    h1 {
+      font-size: 32px;
+    }
+
+    h2 {
+      font-size: 20px;
+    }
+  }
+
   // Now on to the jumbotron...
   .jumbotron {
     // Shrink the banner image and the font
@@ -162,12 +177,20 @@ code {
     background-image: url("../img/whispernote-banner-tablet.jpg");
     background-position:top center;
 
+    p {
+//      margin-bottom: 12px;
+    }
+
     .masthead {
       .container {
         .mobile-padding();
       }
       h1 {
-        font-size: 40px;
+        font-size: 36px;
+      }
+
+      p {
+        font-size: 24px;
       }
     }
   }
