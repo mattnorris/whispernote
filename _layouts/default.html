@@ -15,6 +15,8 @@
     <script src="http://code.jquery.com/jquery-latest.js"></script>
 </head>
 <body>
+    <!-- These top sections are not put in a container because we want them
+    to take up the entire width of the page with no gutters or padding. -->
     <!-- Fork me ribbon -->
     <div class="github-fork-ribbon-wrapper right">
         <div class="github-fork-ribbon">
@@ -25,27 +27,27 @@
     <div class="jumbotron">
         <div class="masthead">
             <div class="container">
-                <!--<div class="span4">-->
-                    <h1>{{ site.project.name }}</h1>
-                    <p>{{ site.project.description }}</p>
-                    <p>
-                        <a class="btn btn-primary btn-large"
-                            href="{{ site.project.download }}">Download {{ site.project.name }}</a>
-                    </p>
-                <!--</div>-->
+                <h1>{{ site.project.name }}</h1>
+                <p>{{ site.project.description }}</p>
+                <p>
+                    <a class="btn btn-primary btn-large"
+                        href="{{ site.project.download }}">Download {{ site.project.name }}</a>
+                </p>
             </div>
         </div>
     </div>
 
+    <!-- Main content -->
     <div class="container-fluid">
         {{ content }}
-        <!-- TODO: Footer -->
+        <!--Footer -->
         <div class="row-fluid">
             <div class="span1"></div>
             <footer class="span10">
                 <a href="{{ site.author.site }}">MattNorris.me</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://github.com/{{ site.author.github }}"><i class="icon-github-alt"></i> GitHub</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.linkedin.com/in/{{ site.author.linkedin }}"><i class="icon-linkedin-sign"></i> LinkedIn</a>
             </footer>
             <div class="span1"></div>
+        </div>
     </div>
 </body>
 
@@ -53,16 +55,16 @@
 <script src="assets/js/bootstrap.min.js"></script>
 <script>
     $(function() {
-        // Highlight the active nav link.
-        // TODO: Make this a plugin.
-        var url = window.location.pathname;
-        var filename = url.substr(url.lastIndexOf('/') + 1);
-        $('.navbar a[href$="' + filename + '"]').parent().addClass("active");
-
         // Highlight the "Read the rationale" sections.
         $('a:contains("Read the rationale.")').each(function() {
             $(this).parent().addClass("alert alert-info");
         }).parent().prepend('<i class="icon-question-sign"></i>&nbsp;');
+
+        // Fix the double-dashes being printed as a single dash.
+        $('h2:contains("-")').each(function() {
+            var html = $(this).html();
+            $(this).html(html.replace(", ", ", &ndash;"));
+        });
     });
 </script>
 {%include google-analytics.html %}

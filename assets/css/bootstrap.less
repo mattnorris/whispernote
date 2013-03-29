@@ -125,19 +125,21 @@ footer {
   margin-bottom: @baseLineHeight;
 
   .masthead {
-//    padding-left: @fluidGridColumnWidth;
     h1 {
       font-weight: normal;
       font-family: @baseFontFamily;
       font-size: 60px;
+      text-transform: lowercase;
     }
     p {
       font-family: @baseFontFamily;
       font-size: 30px;
+      text-transform: lowercase;
     }
     // Overwrite to be orange.
     .btn-primary {
       .buttonBackground(@btnWarningBackground, @btnWarningBackgroundHighlight);
+      text-transform: capitalize;
     }
   }
 }
@@ -176,10 +178,6 @@ footer {
     // to accommodate smaller screens.
     background-image: url("../img/whispernote-banner-tablet.jpg");
     background-position:top center;
-
-    p {
-//      margin-bottom: 12px;
-    }
 
     .masthead {
       .container {
