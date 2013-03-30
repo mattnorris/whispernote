@@ -17,7 +17,8 @@ OUTPUT_PATH = os.path.normpath(os.path.join(CURR_PATH, '../output'))
 INPUT_PATH = os.path.normpath(os.path.join(CURR_PATH, '../input'))
 
 # Update the system path so we can find the modules we want to test.
-sys.path.append(MODULE_PATH, LIB_PATH)
+sys.path.append(MODULE_PATH)
+sys.path.append(LIB_PATH)
 
 # Import the modules and functions we wish to test.
 import whispernote
