@@ -11,7 +11,7 @@ import datetime
 
 # HTML Parsing
 import urlparse
-from lib.bs4 import BeautifulSoup
+from bs4 import BeautifulSoup
 
 # Email 
 import smtplib

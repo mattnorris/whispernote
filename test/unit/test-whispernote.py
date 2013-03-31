@@ -23,7 +23,7 @@ sys.path.append(LIB_PATH)
 # Import the modules and functions we wish to test.
 import whispernote
 
-from lib.bs4 import BeautifulSoup
+from bs4 import BeautifulSoup
 from urlparse import urlparse
 
 __homepage__ = "http://mattnorris.me"
