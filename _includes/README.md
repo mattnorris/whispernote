@@ -49,7 +49,15 @@ The second part contains a *Highlight ID* and *Batch ID*. If you run **Whisperno
 
 Search Evernote for the *Highlight ID* to find duplicate notes, or for the *Batch ID* to find all the notes created in a particular session. 
 
-# Instructions
+# Get Started 
+
+## Install
+
+Whispernote is a Python script that uses the [BeautifulSoup](http://www.crummy.com/software/BeautifulSoup/) parsing library. If you haven't already, [install pip](http://www.pip-installer.org/en/latest/installing.html), then run: 
+
+    pip install BeautifulSoup4 
+
+Download [whispernote.py](https://raw.github.com/mattnorris/whispernote/master/src/whispernote.py). 
 
 ## Get Your Highlights
 
