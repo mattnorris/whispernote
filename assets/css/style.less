@@ -1,0 +1,106 @@
+// Mixins
+.mobile-padding(@padding: 20px) {
+  padding-left: @padding;
+  padding-right: @padding;
+}
+
+// Styles
+footer {
+  border-top: 1px dotted @grayLight;
+  margin-top: 36px;
+  padding: 2px 4px;
+//  background-color: @grayLighter;
+}
+
+// Custom components: Jumbotron
+@import "bootstrap-extended.less";
+.jumbotron {
+  text-align: left;
+  #gradient > .directional(@blue, @black, 135deg);
+  background-image: url("../img/whispernote-banner.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-bottom: @baseLineHeight;
+
+  .masthead {
+    h1 {
+      font-weight: normal;
+      font-family: @baseFontFamily;
+      font-size: 60px;
+      text-transform: lowercase;
+    }
+    p {
+      font-family: @baseFontFamily;
+      font-size: 30px;
+      text-transform: lowercase;
+    }
+  // Overwrite to be orange.
+    .btn-primary {
+      .buttonBackground(@btnWarningBackground, @btnWarningBackgroundHighlight);
+      text-transform: capitalize;
+    }
+  }
+}
+
+// Tablets and below
+@media (max-width: 767px) {
+// By default, Twitter Boostrap pads the body of mobile browsers
+// with a media query. This makes makes your site look good in most cases,
+// but works against you if you want a Jumbotron-style header.
+//
+// Remove the extra padding for media queries so the Jumbotron
+// still spans the full width of the page, even in mobile browsers.
+// Instead, move the padding into the container-fluid class.
+  body {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .container-fluid {
+    .mobile-padding();
+  }
+
+// Now on to the jumbotron...
+  .jumbotron {
+  // Shrink the banner image and the font
+  // to accommodate smaller screens.
+    background-image: url("../img/whispernote-banner-tablet.jpg");
+    background-position:top center;
+
+    .masthead {
+      padding-top: 0px;
+      padding-bottom: 0px;
+      .container {
+        .mobile-padding();
+
+      }
+      h1 {
+        font-size: 32px;
+        letter-spacing: 0px;
+      }
+
+      p {
+        font-size: 16px;
+
+        a {
+          margin-top: 96px;
+        }
+      }
+    }
+  }
+}
+
+.hero-unit {
+  padding: 30px; // half the original padding
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+}
+
+@import "gh-fork-ribbon.less";
+.github-fork-ribbon {
+  background-color: @orange;
+}
