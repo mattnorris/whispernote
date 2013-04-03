@@ -18,15 +18,20 @@ Open a terminal and run...
 
 ## Output
 
-Whispernote uses **Gmail** to create a new Evernote note for each highlight in *myhighlights.html*. An example quote from [Rework](http://www.amazon.com/Rework-Jason-Fried/dp/0307463745) (originally said by Mark Twain) is below.
-
-![Screenshot of Kindle Highlight in Evernote](https://raw.github.com/mattnorris/whispernote/gh-pages/assets/img/kindle-highlight-in-evernote.png)
+Whispernote uses **Gmail** to create a new Evernote note for each highlight in *myhighlights.html*.
 
 Why Gmail? [Read the rationale.](https://github.com/mattnorris/whispernote/wiki/FAQs)
 
+Here is a quote from the book [Rework](http://www.amazon.com/Rework-Jason-Fried/dp/0307463745) by the guys at [37signals](http://37signals.com/), attributed to Mark Twain:
+
+<!-- Use Bootstrap class to center image. -->
+<p class="text-center">
+  <img alt="Screenshot of Kindle Highlight in Evernote" src="https://raw.github.com/mattnorris/whispernote/gh-pages/assets/img/kindle-highlight-in-evernote.png" />
+</p>
+
 ## Output Details
 
-The new note consists of two parts. The first part is the highlight itself, along with a link to **open it directly on your Kindle app** and read it in context.
+The new note consists of two parts. The first part is the highlight itself, along with a link to **open it directly on your Kindle app** and read it in context. If you have [Rework](http://www.amazon.com/Rework-Jason-Fried/dp/0307463745) on Kindle, click right now to try it out!
 
 > I have never let my schooling interfere with my education.
 >
