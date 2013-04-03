@@ -18,34 +18,26 @@ Open a terminal and run...
 
 ## Output
 
-Whispernote uses **Gmail** to create a new Evernote note for each highlight in *myhighlights.html*. 
+Whispernote uses **Gmail** to create a new Evernote note for each highlight in *myhighlights.html*. An example quote from [Rework](http://www.amazon.com/Rework-Jason-Fried/dp/0307463745) (originally said by Mark Twain) is below.
 
-> Many treasure-crocks, buried of old in war-time, has he now for his own.
-> 
-> [Read more at location 1368](kindle://book?action=open&asin=B004TP29C4&location=1368 "Open this highlight on Kindle")
-> 
-> ---
-> Use these unique IDs to search for duplicate notes in Evernote.
-> 
-> - *Highlight ID:* openB004TP29C41368
-> - *Batch ID:* batch20121211171828
+![Screenshot of Kindle Highlight in Evernote](https://raw.github.com/mattnorris/whispernote/gh-pages/assets/img/kindle-highlight-in-evernote.png)
 
 Why Gmail? [Read the rationale.](https://github.com/mattnorris/whispernote/wiki/FAQs)
 
 ## Output Details
 
-The new note consists of two parts. The first part is the highlight itself, along with a hyperlink to open the highlight directly on your device's Kindle app and read it in context.
+The new note consists of two parts. The first part is the highlight itself, along with a link to **open it directly on your Kindle app** and read it in context.
 
-> Many treasure-crocks, buried of old in war-time, has he now for his own.
-> 
-> [Read more at location 1368](kindle://book?action=open&asin=B004TP29C4&location=1368 "Open this highlight on Kindle")
+> I have never let my schooling interfere with my education.
+>
+> [Read more at location 1396](kindle://book?action=open&asin=B002MUAJ2A&location=1396 "Open this highlight on Kindle")
 
-The second part contains a *Highlight ID* and *Batch ID*. If you run **Whispernote** more than once on the same clippings, you can use these IDs to find duplicates. 
+The second part contains a *Highlight ID* and *Batch ID*. If you run **Whispernote** more than once on the same clippings, you can use these IDs to find duplicates.
 
 > Use these unique IDs to search for duplicate notes in Evernote.
-> 
-> - *Highlight ID:* openB004TP29C41368
-> - *Batch ID:* batch20121211171828
+>
+> - *Highlight ID:* openB002MUAJ2A1396
+> -	*Batch ID:* batch20121213212540
 
 Search Evernote for the *Highlight ID* to find duplicate notes, or for the *Batch ID* to find all the notes created in a particular session. 
 
