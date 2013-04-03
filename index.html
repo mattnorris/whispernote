@@ -22,5 +22,16 @@ layout: default
         // http://stackoverflow.com/a/2698303/154065
         $('h1#whispernote').nextUntil('h1').andSelf()
                 .wrapAll('<div class="hero-unit" />');
+
+        // Highlight the "Read the rationale" sections.
+        $('a:contains("Read the rationale.")').each(function() {
+            $(this).parent().addClass("alert alert-info");
+        }).parent().prepend('<i class="icon-question-sign"></i>&nbsp;');
+
+        // Fix the double-dashes being printed as a single dash.
+        $('h2:contains("-")').each(function() {
+            var html = $(this).html();
+            $(this).html(html.replace(", ", ", &ndash;"));
+        });
     });
 </script>

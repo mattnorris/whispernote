@@ -12,19 +12,21 @@
  * Author: Matt Norris @mattnorrisme
  */
 
-// Mixins
-.3d-clip {
-  // Make it look like a note card by adding a border and shadow.
+// Mixins ----------------------------------------------------------------------
+
+// Shadow for elements like quotes and images.
+.shadow {
   margin: @baseLineHeight*2 0;
   .box-shadow(0 0 16px 3px @grayLight);
 }
 
+// Padding for mobile viewports.
 .mobile-padding(@padding: 20px) {
   padding-left: @padding;
   padding-right: @padding;
 }
 
-// Core variables and mixins
+// Core variables and mixins ---------------------------------------------------
 @import "variables.less"; // Modify this for custom colors, font-sizes, etc
 @import "../../lib/bootstrap/less/mixins.less";
 
@@ -43,7 +45,7 @@ h1 {
 }
 
 blockquote {
-  .3d-clip;
+  .shadow;
   padding: 15px;
   border: @gray;
   p {
@@ -109,9 +111,11 @@ code {
 //}
 
 // Custom styles ---------------------------------------------------------------
+
+// Give a shadow to images in the main body only (screenshots).
 div.row-fluid {
   img {
-    .3d-clip;
+    .shadow;
   }
 }
 
@@ -119,7 +123,6 @@ footer {
   border-top: 1px dotted @grayLight;
   margin-top: 36px;
   padding: 2px 4px;
-//  background-color: @grayLighter;
 }
 
 // Custom components: Jumbotron
@@ -142,7 +145,7 @@ footer {
       font-family: @baseFontFamily;
       font-size: 30px;
     }
-  // Overwrite to be orange.
+    // Overwrite to be orange.
     .btn-primary {
       .buttonBackground(@btnWarningBackground, @btnWarningBackgroundHighlight);
     }
@@ -166,7 +169,6 @@ footer {
     .mobile-padding();
   }
 
-// Now on to the jumbotron...
   .jumbotron {
   // Shrink the banner image and the font
   // to accommodate smaller screens.
@@ -207,6 +209,7 @@ footer {
   }
 }
 
+// Github ribbon
 @import "gh-fork-ribbon.less";
 .github-fork-ribbon {
   background-color: @orange;

@@ -2,7 +2,7 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:400,900,400italic,900italic);
 @import "museo-slab.css";
 @import url(http://fonts.googleapis.com/css?family=Lato:400,900,400italic,900italic);
-.3d-clip{margin:40px 0;-webkit-box-shadow:0 0 16px 3px #999999;-moz-box-shadow:0 0 16px 3px #999999;box-shadow:0 0 16px 3px #999999;}
+.shadow{margin:40px 0;-webkit-box-shadow:0 0 16px 3px #999999;-moz-box-shadow:0 0 16px 3px #999999;box-shadow:0 0 16px 3px #999999;}
 .clearfix{*zoom:1;}.clearfix:before,.clearfix:after{display:table;content:"";line-height:0;}
 .clearfix:after{clear:both;}
 .hide-text{font:0/0 a;color:transparent;text-shadow:none;background-color:transparent;border:0;}

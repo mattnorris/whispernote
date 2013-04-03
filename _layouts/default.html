@@ -53,19 +53,6 @@
 
 <!-- Scripts -->
 <script src="assets/js/bootstrap.min.js"></script>
-<script>
-    $(function() {
-        // Highlight the "Read the rationale" sections.
-        $('a:contains("Read the rationale.")').each(function() {
-            $(this).parent().addClass("alert alert-info");
-        }).parent().prepend('<i class="icon-question-sign"></i>&nbsp;');
-
-        // Fix the double-dashes being printed as a single dash.
-        $('h2:contains("-")').each(function() {
-            var html = $(this).html();
-            $(this).html(html.replace(", ", ", &ndash;"));
-        });
-    });
-</script>
+{%include js-functions.html %}
 {%include google-analytics.html %}
 </html>
