@@ -47,7 +47,7 @@ h1 {
 blockquote {
   .shadow;
   padding: 15px;
-  border: @gray;
+  border: 0; // remove the left thick, gray border
   p {
     // Put natural margins back in paragraphs.
     margin-bottom: @baseLineHeight;
@@ -101,8 +101,8 @@ code {
 
 // Optional components: responsive features
 @import "../../lib/bootstrap/less/responsive.less";
-// Remove the bottom margin from the nav so there is no gap
-// between it and the banner image.
+//Remove the bottom margin from the nav so there is no gap
+//between it and the banner image.
 //.navbar-fixed-top {
 //  margin-bottom: 0;
 //}

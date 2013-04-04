@@ -17,14 +17,21 @@
 <body>
     <!-- These top sections are not put in a container because we want them
     to take up the entire width of the page with no gutters or padding. -->
-    <!-- Fork me ribbon -->
-    <div class="github-fork-ribbon-wrapper right">
-        <div class="github-fork-ribbon">
-            <a href="{{ site.project.fork }}">Fork me on GitHub</a>
-        </div>
-    </div>
+
+    <!-- Navigation -->
+    {% if site.navbar %}
+        {% include navbar.html %}
+    {% endif %}
+
     <!-- Banner -->
     <div class="jumbotron">
+        <!-- Fork me ribbon -->
+        <div class="github-fork-ribbon-wrapper right">
+            <div class="github-fork-ribbon">
+                <a href="{{ site.project.fork }}">Fork me on GitHub</a>
+            </div>
+        </div>
+        <!-- Masthead -->
         <div class="masthead">
             <div class="container">
                 <h1>{{ site.project.name }}</h1>
@@ -53,6 +60,6 @@
 
 <!-- Scripts -->
 <script src="assets/js/bootstrap.min.js"></script>
-{%include js-functions.html %}
-{%include google-analytics.html %}
+{% include js-functions.html %}
+{% include google-analytics.html %}
 </html>

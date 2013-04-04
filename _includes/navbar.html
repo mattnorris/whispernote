@@ -1,0 +1,47 @@
+<!--<div class="navbar navbar-inverse navbar-fixed-top">-->
+<!--<div class="navbar navbar-inverse">-->
+<div class="navbar navbar-inverse navbar-static-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <div class="nav-collapse collapse">
+                <!-- Regular nav links -->
+                <ul class="nav">
+                    <li class="">
+                        <a href="./index.html">Home</a>
+                    </li>
+                    <li class="">
+                        <a href="./getting-started.html">Get started</a>
+                    </li>
+                    <li class="">
+                        <a href="./more.html">More</a>
+                    </li>
+                </ul>
+                <!-- Github links -->
+                <!--<ul class="nav pull-right">-->
+                    <!--<li class="">-->
+                        <!--<a id="nav-github-download" href="{{ site.project.download }}"><i class="icon-download"></i> Download</a>-->
+                    <!--</li>-->
+                    <!--<li class="">-->
+                        <!--<a id="nav-github-fork" href="{{ site.project.fork }}"><i class="icon-github"></i> Fork me</a>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function() {
+        // Highlight the active nav link by matching the URL filename
+        // to the nav menu.
+        var url = window.location.pathname;
+        var filename = url.substr(url.lastIndexOf('/') + 1);
+        $('.navbar a[href$="' + filename + '"]').parent().addClass("active");
+    });
+</script>
