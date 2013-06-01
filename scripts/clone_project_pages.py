@@ -2,8 +2,8 @@
 
 """
 Clones the GitHub Pages of the Whispernote project into a given directory. 
-This is meant to shorten the development cycle of the new project page by 
-copy/pasting the Whispernote one. 
+Shortens the development life cycle of new project pages by reusing 
+the Whispernote pages. 
 """
 
 from optparse import OptionParser
@@ -11,39 +11,41 @@ import tempfile
 import distutils.core
 from subprocess import call
 import os
+import shutil
 
 REPO = 'git://github.com/mattnorris/whispernote.git'
 REPO_ROOT = 'whispernote'
 BRANCH = 'gh-pages'
 
 CSS_DIR = 'assets/css'
-BS_DIR = 'lib'
+BS_REPO = 'git://github.com/twitter/bootstrap.git'
 
 def clone(dest):
     """
     - Clone Whispernote
     - Copy its contents into the desired project
-    - Backup variables.less and bootstrap.less -> .bak (they will be overwritten later)
     - Navigate to lib folder and clone bootstrap project into it
-    - Move variables.less and bootstrap.less
+    - Move cloned variables.less and bootstrap.less
     """
     # Clone into a temporary directory. 
     clonedir = tempfile.mkdtemp()
-    # git clone -b gh-pages git://github.com/mattnorris/whispernote.git DIR
     call(['git', 'clone', '-b', BRANCH, REPO, clonedir])
 
-    # Copy the cloned contents. 
+    # Copy the cloned contents, except for the git history. 
+    shutil.rmtree(os.path.join(clonedir, '.git'))
     distutils.dir_util.copy_tree(clonedir, dest)
 
-    # Back up the files bootstrap.less and variables.less for reference.  
-    # They will be overwritten momentarily. 
-    os.rename(os.path.join(dest, CSS_DIR, 'bootstrap.less'), 
-        os.path.join(dest, CSS_DIR, 'bootstrap.less.bak'))
-    os.rename(os.path.join(dest, CSS_DIR, 'variables.less'), 
-        os.path.join(dest, CSS_DIR, 'variables.less.bak'))
-
     # Clone the Twitter Bootstrap project. 
-    
+    bs_dir = os.path.normpath(os.path.join(dest, 'lib', 'bootstrap'))
+    shutil.rmtree(bs_dir)
+    call(['git', 'clone', BS_REPO, bs_dir])
+
+    # Move and rename variables.less and bootstrap.less
+    css_dir = os.path.normpath(os.path.join(dest, 'assets', 'css'))
+    shutil.move(os.path.join(bs_dir, 'less', 'bootstrap.less'), 
+        os.path.join(css_dir, 'bootstrap.less.cloned'))
+    shutil.move(os.path.join(bs_dir, 'less', 'variables.less'), 
+        os.path.join(css_dir, 'variables.less.cloned'))
 
 def main(): 
     usage = "%prog DIR"
