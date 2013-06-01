@@ -22,7 +22,7 @@ Whispernote uses **Gmail** to create a new Evernote note for each highlight in *
 
 Why Gmail? [Read the rationale.](https://github.com/mattnorris/whispernote/wiki/FAQs)
 
-Here is a quote from the book [Rework](http://www.amazon.com/Rework-Jason-Fried/dp/0307463745) by the guys at [37signals](http://37signals.com/), attributed to Mark Twain:
+Here is a Mark Twain quote found in the [37signals](http://37signals.com/) book [Rework](http://www.amazon.com/Rework-Jason-Fried/dp/0307463745):
 
 <!-- Use Bootstrap class to center image. -->
 <p class="text-center">
@@ -31,7 +31,7 @@ Here is a quote from the book [Rework](http://www.amazon.com/Rework-Jason-Fried/
 
 ## Output Details
 
-The new note consists of two parts. The first part is the highlight itself, along with a link to **open it directly on your Kindle app** and read it in context. If you have [Rework](http://www.amazon.com/Rework-Jason-Fried/dp/0307463745) on Kindle, click right now to try it out!
+The new note consists of two parts. The first part is the highlight itself, along with a link to **open it directly on your Kindle app** and read it in context. If you have [Rework](http://www.amazon.com/Rework-Jason-Fried/dp/0307463745) on Kindle, **click the "Read more..." link below to try it out!**
 
 > I have never let my schooling interfere with my education.
 >
