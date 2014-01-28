@@ -1,3 +1,4 @@
+![Whispernote Banner](https://googledrive.com/host/0B2GEUe-OZRECV3BpNm1fam4tNk0/whispernote-banner.jpg "Whispernote")
 # Whispernote
 ## Create Evernote notes from Kindle highlights
 
