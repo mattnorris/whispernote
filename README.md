@@ -1,6 +1,5 @@
 # Whispernote
 ## Create Evernote notes from Kindle highlights
-![Whispernote Banner](https://googledrive.com/host/0B2GEUe-OZRECV3BpNm1fam4tNk0/whispernote-banner.jpg "Whispernote")
 
 You love reading your [**Kindle**](https://kindle.amazon.com/), and you make lots of highlights to review later. You also use [**Evernote**](http://evernote.com) to remember... well, just about everything. Now you can easily **save each highlight as a separate note** in Evernote.
 
